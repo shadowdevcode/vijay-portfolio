@@ -32,7 +32,7 @@ export const PERSONAL_INFO = {
   phone: "+91-6362057001",
   summary: "AI Product Management Professional (5+ years) with engineering, founder, and product-operations background. I deliver activation (+78%) and retention (+12 pp) gains across 0-1 AI/consumer products and EdTech platforms. Transitioning into APM/PM roles in consumer tech with proof-of-work across AI workflow automation and growth product use cases.",
   // TODO: Replace with your actual photo URL or local file path (e.g., "/vijay.jpg")
-  avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop", 
+  avatar: "https://github.com/shadowdevcode/vijay-portfolio/blob/main/Gemini-headshot.png?q=80&w=1000&auto=format&fit=crop", 
 };
 
 export const SOCIAL_LINKS: SocialLink[] = [
