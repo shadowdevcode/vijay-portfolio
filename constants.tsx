@@ -28,19 +28,19 @@ export const PERSONAL_INFO = {
   name: "Vijay Sehgal",
   title: "AI Product Manager & Builder",
   location: "Gurugram, India",
-  email: "vijay.sehgal@example.com", // Placeholder
+  email: "vijay.b.sehgal@gmail.com", // Placeholder
   phone: "+91-6362057001",
   summary: "AI Product Management Professional (5+ years) with engineering, founder, and product-operations background. I deliver activation (+78%) and retention (+12 pp) gains across 0-1 AI/consumer products and EdTech platforms. Transitioning into APM/PM roles in consumer tech with proof-of-work across AI workflow automation and growth product use cases.",
   // TODO: Replace with your actual photo URL or local file path (e.g., "/vijay.jpg")
-  avatar: "https://drive.google.com/file/d/1EVSVHjnkZ7KbHiTS75MbMBNujbkyufG4/view?usp=sharing", 
+  avatar: "/Gemini-headshot.png", 
 };
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { name: "Email", url: `mailto:${PERSONAL_INFO.email}`, icon: Mail },
-  { name: "LinkedIn", url: "https://linkedin.com/in/your-profile", icon: Linkedin }, 
-  { name: "GitHub", url: "https://github.com/your-username", icon: Github }, 
+  { name: "LinkedIn", url: "https://linkedin.com/in/vijay-b-sehgal", icon: Linkedin }, 
+  { name: "GitHub", url: "https://github.com/shadowdevcode", icon: Github }, 
   // TODO: Paste your hosted Resume Link here (e.g. "https://drive.google.com/...") OR keep "/resume.pdf"
-  { name: "Resume", url: "/resume.pdf", icon: FileText }, 
+  { name: "Resume", url: "/resume.pdfhttps://drive.google.com/file/d/13EeKjnXcvRk7LFsb0kH3kV-VfS-VQqh7/view?usp=drive_link", icon: FileText }, 
 ];
 
 export const EXPERIENCE: Job[] = [
