@@ -155,32 +155,32 @@ export const SKILLS: Skill[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   // Example of a Medium/Blog link
-  {
-    title: "The Future of PM Portfolios: AI-Driven & Dynamic",
-    excerpt: "How I built an AI Agent that auto-summarizes case studies and generates portfolio visuals. Cut portfolio build time by ~90% (45m to 5m).",
-    date: "2025-05-15",
-    readTime: "5 min",
-    tags: ["AI", "Career"],
-    link: "https://medium.com/@your-handle/future-of-pm-portfolios"
-  },
-  {
-    title: "Deconstructing Blinkit's 10-Minute Delivery UX",
-    excerpt: "A deep dive into the psychological triggers and habit loops in quick commerce apps.",
-    date: "2025-02-10",
-    readTime: "8 min",
-    tags: ["UX", "Product Teardown"],
-    link: "#"
-  },
-  // ==========================================
-  // HOW TO ADD A LINKEDIN POST
-  // Copy the block below, uncomment it (remove //), and fill in your details.
-  // ==========================================
   // {
-  //   title: "My thoughts on the new Gemini 2.0 release",
-  //   excerpt: "Breaking down the implications for Product Managers and how multimodal agents change the game.",
-  //   date: "2025-06-20",
-  //   readTime: "Post", // You can use "Post" instead of time for LinkedIn
-  //   tags: ["LinkedIn", "AI Strategy"],
-  //   link: "https://www.linkedin.com/posts/your-post-url"
-  // }
+  //   title: "The Future of PM Portfolios: AI-Driven & Dynamic",
+  //   excerpt: "How I built an AI Agent that auto-summarizes case studies and generates portfolio visuals. Cut portfolio build time by ~90% (45m to 5m).",
+  //   date: "2025-05-15",
+  //   readTime: "5 min",
+  //   tags: ["AI", "Career"],
+  //   link: "https://medium.com/@your-handle/future-of-pm-portfolios"
+  // },
+  // {
+  //   title: "Deconstructing Blinkit's 10-Minute Delivery UX",
+  //   excerpt: "A deep dive into the psychological triggers and habit loops in quick commerce apps.",
+  //   date: "2025-02-10",
+  //   readTime: "8 min",
+  //   tags: ["UX", "Product Teardown"],
+  //   link: "#"
+  // },
+  ==========================================
+  HOW TO ADD A LINKEDIN POST
+  Copy the block below, uncomment it (remove //), and fill in your details.
+  ==========================================
+  {
+    title: "My thoughts on the new Google maps new auto detects parking release",
+    excerpt: "Google Maps - Auto-detects Your Parking Location.",
+    date: "2025-06-20",
+    readTime: "Post", // You can use "Post" instead of time for LinkedIn
+    tags: ["LinkedIn", "AI Strategy"],
+    link: "https://www.linkedin.com/posts/your-post-url"
+  }
 ];
