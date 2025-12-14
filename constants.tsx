@@ -177,6 +177,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2025-12-13",
     readTime: "5 min",
     tags: ["LinkedIn", "Google Maps"],
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7405532075950243841/"
+    link: "https://www.linkedin.com/posts/vijay-b-sehgal_if-youre-like-me-you-forget-where-you-park-activity-7405532075950243841-tJJV?utm_source=share&utm_medium=member_desktop&rcm=ACoAABSqsuoBfT1HtIwaRuMhswF-qHJnDIiMfGc"
   }
 ];
