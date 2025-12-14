@@ -40,7 +40,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { name: "LinkedIn", url: "https://linkedin.com/in/vijay-b-sehgal", icon: Linkedin }, 
   { name: "GitHub", url: "https://github.com/shadowdevcode", icon: Github }, 
   // TODO: Paste your hosted Resume Link here (e.g. "https://drive.google.com/...") OR keep "/resume.pdf"
-  { name: "Resume", url: "/resume.pdfhttps://drive.google.com/file/d/13EeKjnXcvRk7LFsb0kH3kV-VfS-VQqh7/view?usp=drive_link", icon: FileText }, 
+  { name: "Resume", url: "https://drive.google.com/file/d/13EeKjnXcvRk7LFsb0kH3kV-VfS-VQqh7/view?usp=drive_link", icon: FileText }, 
 ];
 
 export const EXPERIENCE: Job[] = [
