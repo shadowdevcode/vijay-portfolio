@@ -180,7 +180,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: "Google Maps - Auto-detects Your Parking Location.",
     date: "2025-06-20",
     readTime: "Post", // You can use "Post" instead of time for LinkedIn
-    tags: ["LinkedIn", "AI Strategy"],
-    link: "https://www.linkedin.com/posts/your-post-url"
+    tags: ["LinkedIn", "Google Maps"],
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7405532075950243841/"
   }
 ];
