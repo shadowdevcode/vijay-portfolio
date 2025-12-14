@@ -163,23 +163,19 @@ export const BLOG_POSTS: BlogPost[] = [
   //   tags: ["AI", "Career"],
   //   link: "https://medium.com/@your-handle/future-of-pm-portfolios"
   // },
-  // {
-  //   title: "Deconstructing Blinkit's 10-Minute Delivery UX",
-  //   excerpt: "A deep dive into the psychological triggers and habit loops in quick commerce apps.",
-  //   date: "2025-02-10",
-  //   readTime: "8 min",
-  //   tags: ["UX", "Product Teardown"],
-  //   link: "#"
-  // },
-  ==========================================
-  HOW TO ADD A LINKEDIN POST
-  Copy the block below, uncomment it (remove //), and fill in your details.
-  ==========================================
+  {
+    title: "Deconstructing Blinkit's 10-Minute Delivery UX",
+    excerpt: "A deep dive into the psychological triggers and habit loops in quick commerce apps.",
+    date: "2025-02-10",
+    readTime: "8 min",
+    tags: ["UX", "Product Teardown"],
+    link: "#"
+  },
   {
     title: "My thoughts on the new Google maps new auto detects parking release",
     excerpt: "Google Maps - Auto-detects Your Parking Location.",
-    date: "2025-06-20",
-    readTime: "Post", // You can use "Post" instead of time for LinkedIn
+    date: "2025-12-13",
+    readTime: "5 min",
     tags: ["LinkedIn", "Google Maps"],
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7405532075950243841/"
   }
