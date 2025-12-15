@@ -1,12 +1,12 @@
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  FileText, 
-  Code, 
-  Database, 
-  Layout, 
-  Brain, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  FileText,
+  Code,
+  Database,
+  Layout,
+  Brain,
   Briefcase,
   Rocket,
   LineChart,
@@ -32,15 +32,15 @@ export const PERSONAL_INFO = {
   phone: "+91-6362057001",
   summary: "AI Product Management Professional (5+ years) with engineering, founder, and product-operations background. I deliver activation (+78%) and retention (+12 pp) gains across 0-1 AI/consumer products and EdTech platforms. Transitioning into APM/PM roles in consumer tech with proof-of-work across AI workflow automation and growth product use cases.",
   // TODO: Replace with your actual photo URL or local file path (e.g., "/vijay.jpg")
-  avatar: "Public/Gemini-headshot.png", 
+  avatar: "/Gemini-headshot.png",
 };
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { name: "Email", url: `mailto:${PERSONAL_INFO.email}`, icon: Mail },
-  { name: "LinkedIn", url: "https://linkedin.com/in/vijay-b-sehgal", icon: Linkedin }, 
-  { name: "GitHub", url: "https://github.com/shadowdevcode", icon: Github }, 
+  { name: "LinkedIn", url: "https://linkedin.com/in/vijay-b-sehgal", icon: Linkedin },
+  { name: "GitHub", url: "https://github.com/shadowdevcode", icon: Github },
   // TODO: Paste your hosted Resume Link here (e.g. "https://drive.google.com/...") OR keep "/resume.pdf"
-  { name: "Resume", url: "https://drive.google.com/file/d/13EeKjnXcvRk7LFsb0kH3kV-VfS-VQqh7/view?usp=drive_link", icon: FileText }, 
+  { name: "Resume", url: "https://drive.google.com/file/d/13EeKjnXcvRk7LFsb0kH3kV-VfS-VQqh7/view?usp=drive_link", icon: FileText },
 ];
 
 export const EXPERIENCE: Job[] = [
@@ -54,7 +54,7 @@ export const EXPERIENCE: Job[] = [
     featured: true,
     badges: ["Founder Mode", "AI Agents"],
     description: "Focused transition into PM. Built and shipped 6+ AI workflow prototypes for PM/creator communities. Achieved 78% activation in first 14 days for portfolio tools. Solved low repeat-engagement for Swish quick-commerce (2x reorders).",
-    achievements: [] 
+    achievements: []
   },
   {
     company: "WhiteHat Jr (Byjus')",
