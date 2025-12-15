@@ -78,8 +78,17 @@ export const sendMessageToGemini = async (userMessage: string): Promise<string> 
     });
 
     return response.text || "I didn't get a response regarding that.";
-  } catch (error) {
+  } catch (error: any) {
     console.error("Gemini API Error:", error);
+
+    if (error.toString().includes("403") || error.toString().includes("API_KEY")) {
+      return "I'm having trouble connecting (Invalid API Key). Please check your configuration.";
+    }
+
+    if (error.toString().includes("429")) {
+      return "I'm receiving too many requests right now. Please try again in a minute.";
+    }
+
     return "Something went wrong while thinking. Please try again.";
   }
 };
