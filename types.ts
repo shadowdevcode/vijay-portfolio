@@ -28,6 +28,7 @@ export interface Project {
   description: string;
   tags: string[];
   metrics?: string[];
+  highlights?: string[];
   link?: string;
   image?: string;
   caseStudyAvailable?: boolean;
@@ -38,6 +39,7 @@ export interface Skill {
   name: string;
   category: string;
   icon?: string;
+  featured?: boolean;
 }
 
 export interface Education {

@@ -14,7 +14,7 @@
   <meta property="og:title" content="Vijay Sehgal | AI Product Manager & Builder" />
   <meta property="og:description"
     content="5+ years delivering activation (+78%) and retention gains across 0-1 consumer products and EdTech. View my portfolio, case studies, and proof-of-work." />
-  <meta property="og:image" content="/Gemini-headshot.png" />
+  <meta property="og:image" content="https://vijaysehgal.com/Gemini-headshot.png" />
   <meta property="og:url" content="https://vijaysehgal.com" />
 
   <!-- Twitter Card -->
@@ -22,13 +22,40 @@
   <meta name="twitter:title" content="Vijay Sehgal | AI Product Manager" />
   <meta name="twitter:description"
     content="AI PM Portfolio — Case studies, proof-of-work, and an AI assistant you can chat with." />
-  <meta name="twitter:image" content="/Gemini-headshot.png" />
+  <meta name="twitter:image" content="https://vijaysehgal.com/Gemini-headshot.png" />
 
   <title>Vijay Sehgal | AI Product Manager</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font preconnect for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
     rel="stylesheet">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vijay Sehgal",
+    "jobTitle": "AI Product Manager & Builder",
+    "url": "https://vijaysehgal.com",
+    "email": "vijay.b.sehgal@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gurugram",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/vijay-b-sehgal/",
+      "https://github.com/shadowdevcode"
+    ],
+    "description": "AI Product Manager with 5+ years of experience delivering activation and retention gains across 0-1 consumer products and EdTech platforms.",
+    "knowsAbout": ["Product Management", "AI Agents", "User Research", "EdTech", "Consumer Tech"]
+  }
+  </script>
   <script>
     tailwind.config = {
       theme: {
@@ -131,7 +158,16 @@
     /* Text overflow protection */
     .line-clamp-2 {
       display: -webkit-box;
+      line-clamp: 2;
       -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .line-clamp-3 {
+      display: -webkit-box;
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
@@ -153,6 +189,11 @@
 </head>
 
 <body class="bg-background text-primary antialiased selection:bg-accent/20 selection:text-accent">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:text-zinc-900 focus:font-medium">
+    Skip to main content
+  </a>
   <div id="root"></div>
   <!-- This script is critical for the downloaded app to work with Vite -->
   <script type="module" src="/index.tsx"></script>

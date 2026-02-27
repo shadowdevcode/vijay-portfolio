@@ -8,6 +8,7 @@ const PROJECT_ACCENTS = [
   'border-l-purple-500',
   'border-l-amber-500',
   'border-l-emerald-500',
+  'border-l-rose-500',
 ];
 
 const Projects: React.FC = () => {
@@ -52,9 +53,21 @@ const Projects: React.FC = () => {
             )}
 
             {/* Description */}
-            <p className="text-sm text-zinc-600 mb-4 leading-relaxed line-clamp-3">
+            <p className="text-sm text-zinc-600 mb-3 leading-relaxed line-clamp-3">
               {project.description}
             </p>
+
+            {/* Inline highlights — hybrid case study preview */}
+            {project.highlights && project.highlights.length > 0 && (
+              <ul className="space-y-1 mb-3">
+                {project.highlights.map((highlight, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-zinc-500 leading-relaxed">
+                    <span className="text-blue-400 mt-0.5 shrink-0">&#x2022;</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
 
             {/* Metrics — prominent recruiter signal */}
             {project.metrics && project.metrics.length > 0 && (
