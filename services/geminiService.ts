@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
-import { PERSONAL_INFO, EXPERIENCE, PROJECTS, SKILLS } from "../constants";
+import { PERSONAL_INFO, EXPERIENCE, PROJECTS, SKILLS, EDUCATION_DATA } from "../constants";
 
 let aiClient: GoogleGenAI | null = null;
 
@@ -39,6 +39,10 @@ const constructSystemPrompt = () => {
     return `${p.title}: ${p.description} ${metrics}`;
   }).join("\n");
 
+  const educationStr = EDUCATION_DATA.map(e =>
+    `${e.degree} from ${e.institution} (${e.period})${e.highlight ? `. ${e.highlight}` : ''}`
+  ).join("\n");
+
   return `
     You are an AI assistant representing Vijay Sehgal on his portfolio website.
     Your goal is to answer questions about Vijay's professional experience, skills, and projects based on his resume.
@@ -54,6 +58,9 @@ const constructSystemPrompt = () => {
     
     Projects:
     ${projectsStr}
+    
+    Education:
+    ${educationStr}
     
     Tone: Professional, insightful, concise, and product-focused.
     If asked about contact info, provide ${PERSONAL_INFO.email}.

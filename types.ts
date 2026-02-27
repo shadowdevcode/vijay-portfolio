@@ -11,12 +11,14 @@ export interface Job {
   role: string;
   period: string;
   location: string;
-  logo: string; // Identifier for the logo icon
+  logo: string;
   description?: string;
-  achievements?: string[]; // Made optional as description might be the main focus
+  context?: string;
+  impactBullets?: string[];
+  achievements?: string[];
   type: 'Remote' | 'On Site' | 'Hybrid';
-  featured?: boolean; // For the purple highlight
-  badges?: string[]; // For things like "Building a Research Lab"
+  featured?: boolean;
+  badges?: string[];
   link?: string;
 }
 
@@ -25,17 +27,27 @@ export interface Project {
   subtitle: string;
   description: string;
   tags: string[];
-  metrics?: string[]; // E.g., "+78% Activation"
+  metrics?: string[];
   link?: string;
   image?: string;
   caseStudyAvailable?: boolean;
+  capstone?: string;
 }
 
-// Updated to support the new Tag Cloud layout
 export interface Skill {
   name: string;
   category: string;
-  icon?: string; // Optional identifier for specific icons
+  icon?: string;
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  highlight?: string;
+  location?: string;
+  type: 'degree' | 'fellowship' | 'certification';
+  credentialUrl?: string;
 }
 
 export interface BlogPost {
@@ -45,6 +57,8 @@ export interface BlogPost {
   readTime: string;
   tags: string[];
   link?: string;
+  source?: 'linkedin' | 'medium' | 'blog';
+  featured?: boolean;
 }
 
 export interface ChatMessage {

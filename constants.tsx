@@ -3,16 +3,8 @@ import {
   Linkedin,
   Mail,
   FileText,
-  Code,
-  Database,
-  Layout,
-  Brain,
-  Briefcase,
-  Rocket,
-  LineChart,
-  Users
 } from 'lucide-react';
-import { Job, Project, Skill, SocialLink, BlogPost } from './types';
+import { Job, Project, Skill, SocialLink, BlogPost, Education } from './types';
 
 // ==========================================
 // SETUP INSTRUCTIONS
@@ -28,32 +20,36 @@ export const PERSONAL_INFO = {
   name: "Vijay Sehgal",
   title: "AI Product Manager & Builder",
   location: "Gurugram, India",
-  email: "vijay.b.sehgal@gmail.com", // Placeholder
+  email: "vijay.b.sehgal@gmail.com",
   phone: "+91-6362057001",
-  summary: "AI Product Management Professional (5+ years) with engineering, founder, and product-operations background. I deliver activation (+78%) and retention (+12 pp) gains across 0-1 AI/consumer products and EdTech platforms. Transitioning into APM/PM roles in consumer tech with proof-of-work across AI workflow automation and growth product use cases.",
-  // TODO: Replace with your actual photo URL or local file path (e.g., "/vijay.jpg")
+  summary: "AI Product Management Professional with 5+ years of experience as developer, founder, and product-operations lead across 0-1 consumer products and EdTech platforms.",
+  status: "Open to PM roles in Consumer Tech & B2B SaaS",
   avatar: "/Gemini-headshot.png",
 };
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { name: "Email", url: `mailto:${PERSONAL_INFO.email}`, icon: Mail },
-  { name: "LinkedIn", url: "https://linkedin.com/in/vijay-b-sehgal", icon: Linkedin },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/vijay-b-sehgal/", icon: Linkedin },
   { name: "GitHub", url: "https://github.com/shadowdevcode", icon: Github },
-  // TODO: Paste your hosted Resume Link here (e.g. "https://drive.google.com/...") OR keep "/resume.pdf"
-  { name: "Resume", url: "https://drive.google.com/file/d/13EeKjnXcvRk7LFsb0kH3kV-VfS-VQqh7/view?usp=drive_link", icon: FileText },
+  { name: "Resume", url: "https://docs.google.com/document/d/1N8BkbgLhFauwj2cCHxCQa6_ICtIetR-DxGcZ_eHxS-c/edit?tab=t.0#heading=h.9z02xaghie3r", icon: FileText },
 ];
 
 export const EXPERIENCE: Job[] = [
   {
-    company: "Stealth / Independent",
-    role: "Product Builder & Product Management",
-    period: "2022 - Present",
+    company: "Stealth Startup",
+    role: "Product Manager",
+    period: "2024 - Present",
     location: "Remote",
     type: "Remote",
     logo: "stealth",
     featured: true,
-    badges: ["Founder Mode", "AI Agents"],
-    description: "Focused transition into PM. Built and shipped 6+ AI workflow prototypes for PM/creator communities. Achieved 78% activation in first 14 days for portfolio tools. Solved low repeat-engagement for Swish quick-commerce (2x reorders).",
+    badges: ["AI Agents", "ESOP"],
+    context: "Interim PM for a cohort-based consumer product (ESOP contribution)",
+    impactBullets: [
+      "Improved learner satisfaction & NPS via guided onboarding examples",
+      "Standardised product frameworks (PRDs, case studies) across cohorts",
+      "Built Figma/no-code prototypes for faster cohort project reviews"
+    ],
     achievements: []
   },
   {
@@ -63,7 +59,13 @@ export const EXPERIENCE: Job[] = [
     location: "Mumbai",
     type: "Remote",
     logo: "whitehat",
-    description: "Reduced curriculum rollout time by 50% (10-15 to 5-7 days) by streamlining QA cycles. Improved teacher onboarding completion from 60% to 78% by redesigning training journeys. Cut support tickets by 50% by operationalizing SOPs.",
+    context: "India's leading K-12 live coding platform, 12k+ students",
+    impactBullets: [
+      "Curriculum rollout: 10-15 → 5-7 days (-50%)",
+      "Teacher onboarding: 60% → 78% completion",
+      "Support tickets: -50% (operationalised SOPs)",
+      "CSAT: 4.0 → 4.5 for 12k students (A/B tested)"
+    ],
     achievements: []
   },
   {
@@ -73,51 +75,71 @@ export const EXPERIENCE: Job[] = [
     location: "Haryana",
     type: "Hybrid",
     logo: "delta",
-    description: "Founded offline EdTech startup. Drove 1.2 crore ARR with 30% net margin. Launched offline upskilling project based program to 600+ concurrent students with 75% completion rate (vs 60% benchmark).",
+    context: "Founded offline EdTech, project-based upskilling for 600+ students",
+    impactBullets: [
+      "Revenue: ₹1.2 Cr ARR, 30% net margin",
+      "Completion rate: 75% (vs 60% benchmark)",
+      "TA efficiency: +20% via train-the-trainer program"
+    ],
+    achievements: []
+  },
+  {
+    company: "AcadView",
+    role: "Software Developer (Backend)",
+    period: "July 2018 – Aug 2019",
+    location: "Gurugram",
+    type: "On Site",
+    logo: "acadview",
+    context: "EdTech upskilling graduates (Acquired by Upgrad)",
+    impactBullets: [
+      "Shipped Github verification & duplicate detection in LMS",
+      "Verified placement rate: ~80% across 2 cohorts (n≈200)"
+    ],
     achievements: []
   }
 ];
 
 export const PROJECTS: Project[] = [
   {
-    title: "CarouselFlow",
-    subtitle: "AI Agent Workflow",
-    description: "Engineered a 'no-design' workflow using Replit Agents, transforming raw PRDs into branded visual assets instantly in 60s.",
-    tags: ["#Replit", "#B2B SaaS", "#AI"],
-    metrics: ["60s Gen Time", "Instant Branding"],
-    caseStudyAvailable: true,
-    link: "https://medium.com/@your-handle/carouselflow-case-study" // Add your actual link here
-  },
-  {
     title: "GitHub-for-PMs Agent",
-    subtitle: "Portfolio Automation",
-    description: "Built an AI Agent that auto-summarizes case studies and generates portfolio visuals. Cut portfolio build time by ~90% (45m to 5m).",
-    tags: ["#Productivity", "#AI", "#PromptChaining"],
-    metrics: ["90% Time Reduction", "78% Activation"],
-    caseStudyAvailable: true,
-    link: "#"
-  },
-  {
-    title: "Jupiter SIP Habit MVP",
-    subtitle: "Fintech Growth",
-    description: "Solved novelty-drop and habit breaks through celebratory nudges and one-tap actions. Linked insights to rewards.",
-    tags: ["#Fintech", "#Behavioral Design", "#Retention"],
-    metrics: ["15-25% Est. Lift", "Habit Loops"],
+    subtitle: "Builder Tool",
+    description: "Built a working AI Agent that auto-summarizes case studies and generates portfolio visuals. Functional prototype using prompt chaining on Replit.",
+    tags: ["#AI Agent", "#Prototype", "#PromptChaining"],
+    metrics: ["78% Activation", "90% Faster Builds"],
     caseStudyAvailable: true,
     link: "#"
   },
   {
     title: "Swish Quick-Commerce",
     subtitle: "Retention Pilot",
-    description: "Doubled D7 reorder rate (12% to 24%) through post-order engagement experiments and targeted UX flow changes.",
+    capstone: "Airtribe Capstone \u00b7 9/10 \u00b7 Industry PM Reviewed",
+    description: "Redesigned post-order experience through targeted UX flows, nudges, and habit hooks to solve low repeat-engagement in quick-commerce.",
     tags: ["#Retention", "#UX Research", "#Growth"],
-    metrics: ["2x Reorder Rate", "+12% Retention"],
+    metrics: ["2x Reorder Rate", "+12pp Retention"],
+    caseStudyAvailable: true,
+    link: "#"
+  },
+  {
+    title: "Blinkit Growth Teardown",
+    subtitle: "Product Teardown",
+    description: "Reverse-engineered Blinkit's purchase history flow and designed an AI pre-fill feature concept. Projected impact modelled from user research.",
+    tags: ["#Growth Strategy", "#AI Feature", "#Quick-Commerce"],
+    metrics: ["Projected +25% Conv.", "AI Pre-fill Design"],
+    caseStudyAvailable: true,
+    link: "#"
+  },
+  {
+    title: "CarouselFlow",
+    subtitle: "AI Agent Workflow",
+    description: "Engineered a working prototype on Replit that transforms raw PRDs into branded visual assets in 60 seconds for PMs and content creators.",
+    tags: ["#Working Prototype", "#B2B SaaS", "#AI"],
+    metrics: ["60s Generation", "Live Prototype"],
     caseStudyAvailable: true,
     link: "#"
   }
 ];
 
-// Skills mapped from "CORE SKILLS" in resume
+// Skills matched exactly to resume "CORE SKILLS"
 export const SKILLS: Skill[] = [
   // Product
   { name: "Product Management", category: "Product" },
@@ -127,56 +149,89 @@ export const SKILLS: Skill[] = [
   { name: "Product Roadmap", category: "Product" },
   { name: "Experimentation", category: "Product" },
   { name: "Metrics", category: "Product" },
-  { name: "GTM Strategy", category: "Product" },
+  { name: "GTM", category: "Product" },
   { name: "OKRs", category: "Product" },
 
   // Execution
   { name: "Agile Delivery", category: "Execution" },
   { name: "AI Agents", category: "Execution" },
   { name: "Rapid Prototyping", category: "Execution" },
-  { name: "Storytelling", category: "Execution" },
-  { name: "Stakeholder Mgmt", category: "Execution" },
+  { name: "Stakeholder Communication", category: "Execution" },
   { name: "Mentorship", category: "Execution" },
   { name: "Cross-functional Leadership", category: "Execution" },
 
   // Data/Tech
-  { name: "Figma", category: "Data/Tech" },
-  { name: "Miro", category: "Data/Tech" },
+  { name: "Figma/Miro", category: "Data/Tech" },
   { name: "Jira", category: "Data/Tech" },
   { name: "Mixpanel", category: "Data/Tech" },
   { name: "GA4", category: "Data/Tech" },
-  { name: "MS Excel", category: "Data/Tech" },
-  { name: "SQL (Basics)", category: "Data/Tech" },
   { name: "A/B Testing", category: "Data/Tech" },
   { name: "Wireframing", category: "Data/Tech" },
   { name: "Funnel Analysis", category: "Data/Tech" },
-  { name: "LLMs", category: "Data/Tech" }
+  { name: "LLMs", category: "Data/Tech" },
+  { name: "Workflows", category: "Data/Tech" }
+];
+
+export const EDUCATION_DATA: Education[] = [
+  {
+    degree: "B.Tech, Computer Science & Engineering",
+    institution: "Kurukshetra University (HEC)",
+    period: "2012 – 2016",
+    highlight: "Top 3% of the class | GPA 3.8/4.0 (All Rounder)",
+    location: "Haryana",
+    type: "degree"
+  },
+  {
+    degree: "AI-PM Launchpad Fellowship",
+    institution: "Airtribe",
+    period: "2024",
+    highlight: "Top 3% (out of 150+ Fellows) | Scored 9/10 Graduation Project (Swish)",
+    type: "fellowship",
+    credentialUrl: "https://www.airtribe.live/product-management/certificate/BPAGQ91T75AI"
+  },
+  {
+    degree: "Superhuman AI Certification",
+    institution: "Superhuman",
+    period: "2025",
+    highlight: "AI Productivity, Prompt Engineering",
+    type: "certification",
+    credentialUrl: "https://education.superhuman.ai/certificates/dbkz2nh3fa"
+  },
+  {
+    degree: "Generative AI for Product Managers",
+    institution: "LinkedIn Learning",
+    period: "Dec 2025",
+    highlight: "GenAI Tools, AI for Business Analysis, MVP",
+    type: "certification",
+    credentialUrl: "https://www.linkedin.com/learning/certificates/99a9f943a30663d8a1f033465849289baca00d2f7ec255d9bcc73eca738103aa"
+  },
+  {
+    degree: "Generative AI Intensive Program",
+    institution: "GrowthSchool",
+    period: "2024",
+    highlight: "Vibe Coding, Prompt Engineering, AI Applications",
+    type: "certification",
+    credentialUrl: "https://drive.google.com/file/d/1WgbfGod3OK2A_q67pVmT6AePBeDZsYJ-/view?usp=sharing"
+  }
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
-  // Example of a Medium/Blog link
-  // {
-  //   title: "The Future of PM Portfolios: AI-Driven & Dynamic",
-  //   excerpt: "How I built an AI Agent that auto-summarizes case studies and generates portfolio visuals. Cut portfolio build time by ~90% (45m to 5m).",
-  //   date: "2025-05-15",
-  //   readTime: "5 min",
-  //   tags: ["AI", "Career"],
-  //   link: "https://medium.com/@your-handle/future-of-pm-portfolios"
-  // },
   {
     title: "Deconstructing Blinkit's 10-Minute Delivery UX",
     excerpt: "A deep dive into the psychological triggers and habit loops in quick commerce apps.",
     date: "2025-02-10",
     readTime: "8 min",
     tags: ["UX", "Product Teardown"],
+    source: "blog",
     link: "#"
   },
   {
     title: "My thoughts on the new Google maps new auto detects parking release",
     excerpt: "Google Maps - Auto-detects Your Parking Location.",
     date: "2025-12-13",
-    readTime: "5 min",
+    readTime: "2 min",
     tags: ["LinkedIn", "Google Maps"],
+    source: "linkedin",
     link: "https://www.linkedin.com/posts/vijay-b-sehgal_if-youre-like-me-you-forget-where-you-park-activity-7405532075950243841-tJJV?utm_source=share&utm_medium=member_desktop&rcm=ACoAABSqsuoBfT1HtIwaRuMhswF-qHJnDIiMfGc"
   }
 ];

@@ -4,6 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Vijay Sehgal — AI Product Manager & Builder. 5+ years delivering activation (+78%) and retention (+12 pp) gains across 0-1 consumer products and EdTech." />
+
+  <!-- Open Graph / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vijay Sehgal | AI Product Manager & Builder" />
+  <meta property="og:description"
+    content="5+ years delivering activation (+78%) and retention gains across 0-1 consumer products and EdTech. View my portfolio, case studies, and proof-of-work." />
+  <meta property="og:image" content="/Gemini-headshot.png" />
+  <meta property="og:url" content="https://vijaysehgal.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vijay Sehgal | AI Product Manager" />
+  <meta name="twitter:description"
+    content="AI PM Portfolio — Case studies, proof-of-work, and an AI assistant you can chat with." />
+
   <title>Vijay Sehgal | AI Product Manager</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
@@ -44,6 +61,76 @@
 
     html {
       scroll-behavior: smooth;
+    }
+
+    /* Scroll-triggered fade-in-up animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    /* Stagger children for sequential reveals */
+    .stagger-1 {
+      animation-delay: 0.1s;
+    }
+
+    .stagger-2 {
+      animation-delay: 0.2s;
+    }
+
+    .stagger-3 {
+      animation-delay: 0.3s;
+    }
+
+    .stagger-4 {
+      animation-delay: 0.4s;
+    }
+
+    /* Subtle pulse for chat button */
+    @keyframes gentlePulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(24, 24, 27, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 12px rgba(24, 24, 27, 0);
+      }
+    }
+
+    .animate-gentle-pulse {
+      animation: gentlePulse 2.5s ease-in-out 3;
+    }
+
+    /* Print: hide floating UI */
+    @media print {
+      .fixed {
+        display: none !important;
+      }
+
+      body {
+        background: white !important;
+      }
+    }
+
+    /* Text overflow protection */
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   </style>
   <script type="importmap">

@@ -1,85 +1,90 @@
 import React from 'react';
 import { PERSONAL_INFO, SOCIAL_LINKS } from '../constants';
-import { MapPin, Download, FileText, ExternalLink } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  // Find the resume URL dynamically from the constants
-  const resumeUrl = SOCIAL_LINKS.find(link => link.name === 'Resume')?.url || "#";
-  const isExternalLink = resumeUrl.startsWith('http');
+  const resumeLink = SOCIAL_LINKS.find(l => l.name === 'Resume');
 
   return (
-    <section id="home" className="pt-8 pb-12 md:pt-40 md:pb-24">
-      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-16 items-start justify-between">
-        
-        {/* Left Column: Text Content */}
-        <div className="flex-1 space-y-6 md:space-y-8 w-full">
-          {/* Header Info */}
-          <div className="space-y-2 md:space-y-4">
-            <h1 className="text-[2.5rem] xs:text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 font-serif leading-[1.1]">
-              {PERSONAL_INFO.name}
-            </h1>
-            <p className="text-lg md:text-2xl text-zinc-500 font-medium font-serif italic">
-              {PERSONAL_INFO.title}
-            </p>
-             <div className="flex items-center gap-2 text-zinc-500 text-sm font-medium pt-1">
-                <MapPin size={16} />
-                <span>{PERSONAL_INFO.location}</span>
-             </div>
-          </div>
-          
-          {/* About Section */}
-          <div id="about" className="pt-6 scroll-mt-28">
-             <h2 className="text-2xl font-bold text-zinc-900 mb-4 font-sans">About</h2>
-             <p className="text-zinc-600 leading-relaxed text-lg font-light mb-6">
-               {PERSONAL_INFO.summary}
-             </p>
-             
-             <button 
-                onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-zinc-200 rounded-lg text-zinc-900 font-semibold text-sm hover:bg-zinc-50 hover:border-zinc-300 transition-all shadow-sm"
-             >
-                <FileText size={16} />
-                More About Me
-             </button>
+    <section id="home" className="pt-8 pb-8 md:pt-24 md:pb-12 scroll-mt-20">
+      <div className="flex flex-col-reverse md:flex-row md:items-start md:justify-between gap-8">
+        {/* Text content */}
+        <div className="flex-1">
+          <p className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-3">
+            Building Products People Love
+          </p>
+          <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-2 font-serif">
+            {PERSONAL_INFO.name}
+          </h1>
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <p className="text-lg text-zinc-600 italic font-serif">{PERSONAL_INFO.title}</p>
+            <span className="text-zinc-300">•</span>
+            <span className="flex items-center gap-1 text-sm text-zinc-500">
+              <MapPin size={14} /> {PERSONAL_INFO.location}
+            </span>
           </div>
 
-          <div className="flex flex-wrap gap-3 pt-4 border-t border-zinc-100 mt-4">
-             <a
-                href={resumeUrl}
+          {/* Open to Roles badge */}
+          {PERSONAL_INFO.status && (
+            <div className="flex items-center gap-2 mb-5">
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+              <span className="text-sm font-medium text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full">
+                {PERSONAL_INFO.status}
+              </span>
+            </div>
+          )}
+
+          {/* About summary — simplified, no metrics */}
+          <p id="about" className="text-zinc-600 text-base md:text-lg leading-relaxed mb-6 max-w-xl scroll-mt-20">
+            {PERSONAL_INFO.summary}
+          </p>
+
+          {/* CTA Row */}
+          <div className="flex items-center gap-3 flex-wrap">
+            {resumeLink && (
+              <a
+                href={resumeLink.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 text-white rounded-lg hover:bg-zinc-800 transition-all shadow-lg shadow-zinc-900/20 text-sm font-medium group"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-800 transition-colors"
               >
-                {isExternalLink ? (
-                    <ExternalLink size={18} className="group-hover:-translate-y-0.5 transition-transform" />
-                ) : (
-                    <Download size={18} className="group-hover:-translate-y-0.5 transition-transform" />
-                )}
-                {isExternalLink ? "View Resume" : "Download CV"}
+                <resumeLink.icon size={16} /> View Resume
               </a>
-            {SOCIAL_LINKS.filter(link => link.name !== 'Resume').map((link) => (
+            )}
+            {SOCIAL_LINKS.filter(l => l.name !== 'Resume').map((link) => (
               <a
                 key={link.name}
                 href={link.url}
-                target="_blank"
+                target={link.name === 'Email' ? '_self' : '_blank'}
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-12 h-12 bg-white border border-zinc-200 rounded-lg text-zinc-600 hover:text-zinc-900 hover:border-zinc-400 transition-all shadow-sm"
+                className="p-3 rounded-lg border border-zinc-200 text-zinc-500 hover:text-zinc-900 hover:border-zinc-400 transition-all"
                 aria-label={link.name}
               >
-                <link.icon size={20} />
+                <link.icon size={18} />
               </a>
             ))}
           </div>
         </div>
 
-        {/* Right Column: Image */}
-        <div className="relative shrink-0 w-full md:w-auto flex justify-start md:justify-end">
-          <div className="absolute inset-0 bg-zinc-200 rounded-2xl rotate-3 opacity-50 group-hover:rotate-6 transition-transform duration-500 hidden md:block"></div>
+        {/* Avatar with fallback */}
+        <div className="shrink-0 mx-auto md:mx-0">
           <img
             src={PERSONAL_INFO.avatar}
             alt={PERSONAL_INFO.name}
-            className="relative w-full aspect-square md:w-80 md:h-80 rounded-2xl object-cover shadow-xl border-4 border-white grayscale hover:grayscale-0 transition-all duration-700 ease-in-out md:rotate-0"
+            className="w-40 h-40 md:w-48 md:h-48 rounded-2xl object-cover border-2 border-white shadow-lg ring-1 ring-zinc-100"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              const fallback = target.nextElementSibling as HTMLElement;
+              if (fallback) fallback.style.display = 'flex';
+            }}
           />
+          <div
+            className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-zinc-200 items-center justify-center text-4xl font-bold text-zinc-500 border-2 border-white shadow-lg ring-1 ring-zinc-100"
+            style={{ display: 'none' }}
+          >
+            {PERSONAL_INFO.name.split(' ').map(n => n[0]).join('')}
+          </div>
         </div>
       </div>
     </section>
