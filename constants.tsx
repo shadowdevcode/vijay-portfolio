@@ -107,7 +107,7 @@ export const PROJECTS: Project[] = [
     tags: ["#AI Agent", "#Prototype", "#PromptChaining"],
     metrics: ["78% Activation", "90% Faster Builds"],
     caseStudyAvailable: true,
-    link: "#"
+    link: "https://www.notion.so/vijaybsehgal/AI-PM-Portfolio-Generator-GitHub-for-PMs-26bf8aca882d80d4bcb1d31495dd4372?source=copy_link"
   },
   {
     title: "Swish Quick-Commerce",
@@ -117,7 +117,7 @@ export const PROJECTS: Project[] = [
     tags: ["#Retention", "#UX Research", "#Growth"],
     metrics: ["2x Reorder Rate", "+12pp Retention"],
     caseStudyAvailable: true,
-    link: "#"
+    link: "https://www.notion.so/vijaybsehgal/Swish-Retention-Post-Order-Experience-from-12-to-25-25af8aca882d80f78959d111f801f3f0?source=copy_link"
   },
   {
     title: "Blinkit Growth Teardown",
@@ -126,16 +126,25 @@ export const PROJECTS: Project[] = [
     tags: ["#Growth Strategy", "#AI Feature", "#Quick-Commerce"],
     metrics: ["Projected +25% Conv.", "AI Pre-fill Design"],
     caseStudyAvailable: true,
-    link: "#"
+    link: "https://www.notion.so/vijaybsehgal/Product-Sense-Blinkit-Smart-Cart-Reducing-Reorder-Time-by-95-4m-10s-25af8aca882d81bc8c91eb7856407f87?source=copy_link"
   },
   {
-    title: "CarouselFlow",
-    subtitle: "AI Agent Workflow",
-    description: "Engineered a working prototype on Replit that transforms raw PRDs into branded visual assets in 60 seconds for PMs and content creators.",
-    tags: ["#Working Prototype", "#B2B SaaS", "#AI"],
-    metrics: ["60s Generation", "Live Prototype"],
+    title: "WhatsApp: Smart Muting",
+    subtitle: "Teardown + PRD",
+    description: "Tackles notification fatigue for users in India by introducing category-based muting (Marketing vs. Utility) to reduce 'Block Business' rates while retaining critical OTPs.",
+    tags: ["#PRD", "#Product Strategy", "#UX Research"],
+    metrics: ["Target: -15% Block Rate"],
     caseStudyAvailable: true,
-    link: "#"
+    link: "https://vijaybsehgal.notion.site/WhatsApp-India-Smart-Muting-for-Business-Messages-Teardown-PRD-4113bc4217a34bbb865c4aaa4b7d84c9"
+  },
+  {
+    title: "The Digital Health Coach",
+    subtitle: "AI-First Health Platform",
+    description: "A hybrid health coaching platform for urban professionals, combining AI-driven meal logging and chat onboarding with a human accountability layer to ensure habit formation and reduce churn.",
+    tags: ["#GenAI", "#HealthTech", "#0-to-1"],
+    metrics: [">40% W4 Retention", "8% Paid Conv."],
+    caseStudyAvailable: true,
+    link: "https://vijaybsehgal.notion.site/The-Digital-Health-Coach-145c0cb389634f28bf18242bad389dc3"
   }
 ];
 

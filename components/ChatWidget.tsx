@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Send, Sparkles, Loader2 } from 'lucide-react';
+import { X, Send, Sparkles } from 'lucide-react';
 import { sendMessageToGemini } from '../services/geminiService';
 import { ChatMessage } from '../types';
 
@@ -160,9 +160,10 @@ const ChatWidget: React.FC = () => {
                 <div className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 flex items-center justify-center mt-1">
                   <Sparkles size={12} className="text-zinc-500" />
                 </div>
-                <div className="bg-zinc-100 rounded-2xl px-4 py-3 rounded-bl-sm flex items-center gap-2">
-                  <Loader2 size={14} className="animate-spin text-zinc-400" />
-                  <span className="text-xs text-zinc-500">Thinking...</span>
+                <div className="bg-zinc-100 rounded-2xl px-4 py-3 rounded-bl-sm flex items-center gap-1 min-w-[60px] h-[40px]">
+                  <div className="w-1.5 h-1.5 bg-zinc-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                  <div className="w-1.5 h-1.5 bg-zinc-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                  <div className="w-1.5 h-1.5 bg-zinc-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                 </div>
               </div>
             )}
