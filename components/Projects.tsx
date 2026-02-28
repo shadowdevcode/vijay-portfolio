@@ -1,4 +1,12 @@
-import React from 'react';
+/**
+ * Projects — Case Studies & Projects Section
+ * ============================================
+ * Displays project/case-study cards with filter chips
+ * by market segment. Each card shows description,
+ * highlights, metrics, and a link to the full case study.
+ */
+
+import React, { useState } from 'react';
 import { PROJECTS } from '../constants';
 import { BookOpen, ArrowUpRight } from 'lucide-react';
 
@@ -12,17 +20,51 @@ const PROJECT_ACCENTS = [
 ];
 
 const Projects: React.FC = () => {
+  const [activeFilter, setActiveFilter] = useState('All');
+
+  // Derive unique segments from data
+  const segments = ['All', ...Array.from(new Set(PROJECTS.map(p => p.segment).filter(Boolean))) as string[]];
+
+  const filtered = activeFilter === 'All'
+    ? PROJECTS
+    : PROJECTS.filter(p => p.segment === activeFilter);
+
   return (
     <section id="projects" className="py-12 scroll-mt-20">
-      <div className="mb-8">
+      <div className="mb-6">
         <h2 className="text-3xl md:text-4xl font-bold font-serif text-zinc-900 mb-3">
-          Selected Projects
+          Case Studies &amp; Projects
         </h2>
-        <div className="h-1 w-16 bg-zinc-900"></div>
+        <div className="h-1 w-16 bg-zinc-900 mb-6"></div>
+
+        {/* Filter chips */}
+        <div className="flex flex-wrap gap-2">
+          {segments.map((seg) => {
+            const count = seg === 'All' ? PROJECTS.length : PROJECTS.filter(p => p.segment === seg).length;
+            const isActive = activeFilter === seg;
+            return (
+              <button
+                key={seg}
+                onClick={() => setActiveFilter(seg)}
+                className={`
+                  px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200
+                  ${isActive
+                    ? 'bg-zinc-900 text-white shadow-md'
+                    : 'bg-white text-zinc-600 border border-zinc-200 hover:border-zinc-400'}
+                `}
+              >
+                {seg}
+                <span className={`ml-1 px-1.5 py-0.5 rounded-full text-[10px] ${isActive ? 'bg-zinc-800 text-zinc-300' : 'bg-zinc-100 text-zinc-500'}`}>
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {PROJECTS.map((project, index) => (
+        {filtered.map((project, index) => (
           <a
             key={index}
             href={project.link || "#"}
@@ -48,6 +90,15 @@ const Projects: React.FC = () => {
               <div className="flex items-center gap-1.5 mb-2">
                 <span className="text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md">
                   🎓 {project.capstone}
+                </span>
+              </div>
+            )}
+
+            {/* Segment badge */}
+            {project.segment && (
+              <div className="mb-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 bg-zinc-50 border border-zinc-100 px-2 py-0.5 rounded">
+                  {project.segment}
                 </span>
               </div>
             )}

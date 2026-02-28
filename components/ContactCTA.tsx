@@ -1,6 +1,13 @@
+/**
+ * ContactCTA — Bottom-of-page Conversion Section
+ * =================================================
+ * Primary conversion point with email, LinkedIn,
+ * call booking (Cal.com), and resume download CTAs.
+ */
+
 import React from 'react';
-import { PERSONAL_INFO, SOCIAL_LINKS } from '../constants';
-import { ArrowRight, Mail, Linkedin } from 'lucide-react';
+import { PERSONAL_INFO, SOCIAL_LINKS, HIRE_INFO } from '../constants';
+import { ArrowRight, Mail, Linkedin, Calendar, FileDown } from 'lucide-react';
 
 const ContactCTA: React.FC = () => {
     const linkedIn = SOCIAL_LINKS.find(l => l.name === 'LinkedIn');
@@ -14,7 +21,21 @@ const ContactCTA: React.FC = () => {
                 <p className="text-zinc-400 text-sm md:text-base max-w-lg mx-auto mb-8">
                     I'm exploring PM roles in consumer tech and B2B SaaS. If you're building something interesting, I'd love to chat.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+                {/* Primary CTAs */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+                    {/* Book a Call — primary action */}
+                    <a
+                        href={HIRE_INFO.calLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-900/20"
+                    >
+                        <Calendar size={16} />
+                        Book a 20-min Call
+                    </a>
+
+                    {/* Email */}
                     <a
                         href={`mailto:${PERSONAL_INFO.email}`}
                         className="inline-flex items-center gap-2 px-6 py-3 bg-white text-zinc-900 rounded-lg text-sm font-semibold hover:bg-zinc-100 transition-colors"
@@ -22,6 +43,10 @@ const ContactCTA: React.FC = () => {
                         <Mail size={16} />
                         {PERSONAL_INFO.email}
                     </a>
+                </div>
+
+                {/* Secondary CTAs */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     {linkedIn && (
                         <a
                             href={linkedIn.url}
@@ -34,6 +59,16 @@ const ContactCTA: React.FC = () => {
                             <ArrowRight size={14} />
                         </a>
                     )}
+
+                    {/* Resume download */}
+                    <a
+                        href="/resume.pdf"
+                        download
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 text-white rounded-lg text-sm font-semibold hover:bg-zinc-700 transition-colors border border-zinc-700"
+                    >
+                        <FileDown size={16} />
+                        Download Resume
+                    </a>
                 </div>
             </div>
         </section>

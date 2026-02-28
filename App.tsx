@@ -1,6 +1,22 @@
+/**
+ * App — Root Component
+ * =====================
+ * Assembles all portfolio sections in their display order.
+ * Controls scroll-based nav highlighting and scroll-triggered
+ * reveal animations.
+ *
+ * Section order (designed for PM recruiter scan flow):
+ *   Hero → Proof of Impact → Case Studies → Experience
+ *   → Skills → Education → Blog → Contact CTA
+ *
+ * "Show, don't tell" — projects come before work history
+ * so recruiters see proof-of-work first.
+ */
+
 import React, { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import ProofOfImpact from './components/ProofOfImpact';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
@@ -15,10 +31,14 @@ const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
   const mainRef = useRef<HTMLElement>(null);
 
-  // Scroll-based active section detection
+  /**
+   * Scroll spy — detects which section is currently visible
+   * and highlights the corresponding nav item.
+   * Order matches the actual DOM layout (top to bottom).
+   */
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'experience', 'education', 'projects', 'blog'];
+      const sections = ['home', 'about', 'projects', 'experience', 'skills', 'education', 'blog'];
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -36,21 +56,23 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll-triggered reveal animations  
+  /**
+   * Intersection Observer — triggers fade-in-up animation
+   * when each section scrolls into view (fires once per section).
+   */
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-fade-in-up');
-            observer.unobserve(entry.target); // Only animate once
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    // Observe all sections (except hero which is already visible)
     const sections = mainRef.current?.querySelectorAll('section:not(#home)');
     sections?.forEach(section => {
       (section as HTMLElement).style.opacity = '0';
@@ -63,23 +85,28 @@ const App: React.FC = () => {
   return (
     <ErrorBoundary>
       <div className="min-h-screen bg-[#fafafa] relative pb-28 md:pb-20">
-        <main ref={mainRef} className="max-w-4xl mx-auto px-6 sm:px-8">
+        <main id="main-content" ref={mainRef} className="max-w-4xl mx-auto px-6 sm:px-8">
+          {/* ---- Above the fold ---- */}
           <Hero />
+          <ProofOfImpact />
+
+          {/* ---- Proof of work (projects first = "show, don't tell") ---- */}
+          <Projects />
+
+          {/* ---- Traditional credentials ---- */}
           <Experience />
           <Skills />
           <Education />
-          <Projects />
+
+          {/* ---- Writing & Conversion ---- */}
           <Blog />
           <ContactCTA />
         </main>
 
-        {/* Footer */}
         <Footer />
 
-        {/* Floating Bottom Navigation */}
+        {/* Floating UI elements */}
         <Navbar activeSection={activeSection} />
-
-        {/* AI Chat Widget */}
         <ChatWidget />
       </div>
     </ErrorBoundary>

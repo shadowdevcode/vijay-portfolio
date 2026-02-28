@@ -1,3 +1,10 @@
+/**
+ * ErrorBoundary — React Error Safety Net
+ * ========================================
+ * Catches unhandled JavaScript errors in the component tree
+ * and displays a user-friendly fallback instead of a white screen.
+ * Wraps the entire <App /> in App.tsx.
+ */
 import { Component, ErrorInfo, ReactNode } from 'react';
 
 interface Props {

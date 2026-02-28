@@ -1,3 +1,10 @@
+/**
+ * Navbar — Floating Bottom Navigation
+ * =====================================
+ * Fixed bottom nav bar with scroll-spy highlighting.
+ * Shows icons for each section. Active section is determined
+ * by the parent App component via the activeSection prop.
+ */
 import React from 'react';
 import { Home, User, Briefcase, Code, BookOpen, BrainCircuit } from 'lucide-react';
 
@@ -9,9 +16,9 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   const navItems = [
     { id: 'home', icon: Home, label: 'Home' },
     { id: 'about', icon: User, label: 'About' },
-    { id: 'skills', icon: BrainCircuit, label: 'Skills' },
-    { id: 'experience', icon: Briefcase, label: 'Work' },
     { id: 'projects', icon: Code, label: 'Projects' },
+    { id: 'experience', icon: Briefcase, label: 'Work' },
+    { id: 'skills', icon: BrainCircuit, label: 'Skills' },
     { id: 'blog', icon: BookOpen, label: 'Writing' },
   ];
 

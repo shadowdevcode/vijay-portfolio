@@ -1,3 +1,12 @@
+/**
+ * Blog — Writing & Insights Feed
+ * ================================
+ * Displays blog posts and LinkedIn insights with read time,
+ * source icons, and external links. Featured posts get visual
+ * emphasis.
+ *
+ * Data source: constants.tsx → BLOG_POSTS
+ */
 import React from 'react';
 import { BLOG_POSTS } from '../constants';
 import { ArrowRight, Clock, Linkedin, ExternalLink, BookOpen } from 'lucide-react';

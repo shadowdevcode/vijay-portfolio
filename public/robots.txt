@@ -1,0 +1,8 @@
+# Vijay Sehgal — AI PM Portfolio
+# https://vijaysehgal.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://vijaysehgal.com/sitemap.xml

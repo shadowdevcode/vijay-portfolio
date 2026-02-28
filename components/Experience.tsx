@@ -1,3 +1,11 @@
+/**
+ * Experience — Work Timeline
+ * ===========================
+ * Displays job history as a vertical timeline with company
+ * logos, role details, impact bullets, and badges.
+ *
+ * Data source: constants.tsx → EXPERIENCE
+ */
 import React from 'react';
 import { EXPERIENCE } from '../constants';
 import { ArrowUpRight, Rocket, BookOpen, Laptop, Briefcase, Calendar, Code } from 'lucide-react';
@@ -105,6 +113,18 @@ const Experience: React.FC = () => {
                 <p className="text-zinc-600 text-sm md:text-base leading-relaxed pl-0 md:pl-[60px]">
                   {job.description}
                 </p>
+              )}
+
+              {/* Optional external link (e.g. Notion portfolio) */}
+              {job.link && (
+                <a
+                  href={job.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-3 pl-0 md:pl-[60px] text-xs font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  View more case studies <ArrowUpRight size={12} />
+                </a>
               )}
             </div>
           </div>

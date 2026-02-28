@@ -1,10 +1,31 @@
+/**
+ * constants.tsx — Portfolio Data (Single Source of Truth)
+ * ========================================================
+ * ALL portfolio content lives here: personal info, experience,
+ * projects, skills, education, blog posts, impact metrics,
+ * and hire info.
+ *
+ * To update the site content, edit ONLY this file.
+ * Each constant is strongly typed via types.ts.
+ *
+ * Sections:
+ *   PERSONAL_INFO  → Hero section (name, title, summary)
+ *   SOCIAL_LINKS   → CTA buttons and footer links
+ *   EXPERIENCE     → Work timeline cards
+ *   PROJECTS       → Case study cards with filter chips
+ *   SKILLS         → Skill tags grouped by category
+ *   EDUCATION_DATA → Degrees, fellowships, certifications
+ *   BLOG_POSTS     → Writing & insights feed
+ *   IMPACT_METRICS → Proof of Impact metric cards
+ *   HIRE_INFO      → Roles, locations, availability, cal link
+ */
 import {
   Github,
   Linkedin,
   Mail,
   FileText,
 } from 'lucide-react';
-import { Job, Project, Skill, SocialLink, BlogPost, Education } from './types';
+import { Job, Project, Skill, SocialLink, BlogPost, Education, ImpactMetric, NowNextItem, HireInfo } from './types';
 
 // ==========================================
 // SETUP INSTRUCTIONS
@@ -22,7 +43,7 @@ export const PERSONAL_INFO = {
   location: "Gurugram, India",
   email: "vijay.b.sehgal@gmail.com",
   phone: "+91-6362057001",
-  summary: "AI Product Management Professional with 5+ years of experience as developer, founder, and product-operations lead across 0-1 consumer products and EdTech platforms.",
+  summary: "PM with a builder's background: shipped LMS features as a backend developer, founded an EdTech startup to ₹1.2 Cr ARR at 30% net margin, and led product-ops at WhiteHat Jr during hyper-growth. Completed Airtribe AI PM Fellowship in 2024, graduating top 3% of 150+ fellows.",
   status: "Open to PM roles in Consumer Tech & B2B SaaS",
   avatar: "/Gemini-headshot.png",
 };
@@ -36,28 +57,30 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const EXPERIENCE: Job[] = [
   {
-    company: "Stealth Startup",
-    role: "Product Manager",
-    period: "2024 - Present",
+    company: "Independent PM Practice",
+    role: "AI Product Projects",
+    period: "2025 - Present",
     location: "Remote",
     type: "Remote",
     logo: "stealth",
     featured: true,
-    badges: ["AI Agents", "ESOP"],
-    context: "Interim PM for a cohort-based consumer product (ESOP contribution)",
+    badges: ["Industry Case Studies", "AI Agents", "Teardowns", "Portfolio"],
+    context: "Practising PM workflows across consumer tech and SaaS domains through structured case studies, prototypes, and AI-native tooling, reviewed by senior PMs and industry mentors",
     impactBullets: [
-      "Improved learner satisfaction & NPS via guided onboarding examples",
-      "Standardised product frameworks (PRDs, case studies) across cohorts",
-      "Built Figma/no-code prototypes for faster cohort project reviews"
+      "Diagnosed low repeat-purchase on Swish; redesigned post-order UX with nudges and habit hooks — projected 7-day reorder from 12% to 24% (2×)",
+      "Reverse-engineered Blinkit's purchase history flow; designed AI pre-fill feature — projected +25% repeat conversion",
+      "Completed 100+ mock PM interviews on Stellar Peers covering product sense, design, and execution",
+      "Built this AI-powered portfolio website with a Gemini chatbot, serverless API, and recruiter-first UX"
     ],
-    achievements: []
+    achievements: [],
+    link: "https://vijaybsehgal.notion.site/Vijay-s-Portfolio-25af8aca882d80bba710ec33c119b28e"
   },
   {
     company: "WhiteHat Jr (Byjus')",
     role: "Product Operations Lead: LMS & Curriculum",
     period: "Nov 2020 – May 2022",
     location: "Mumbai",
-    type: "Remote",
+    type: "Hybrid",
     logo: "whitehat",
     context: "India's leading K-12 live coding platform, 12k+ students",
     impactBullets: [
@@ -111,6 +134,7 @@ export const PROJECTS: Project[] = [
       "Reduced PM portfolio creation time from hours to minutes"
     ],
     caseStudyAvailable: true,
+    segment: "AI",
     link: "https://www.notion.so/vijaybsehgal/AI-PM-Portfolio-Generator-GitHub-for-PMs-26bf8aca882d80d4bcb1d31495dd4372?source=copy_link"
   },
   {
@@ -125,6 +149,7 @@ export const PROJECTS: Project[] = [
       "Designed habit-forming nudge system with reorder triggers and social proof"
     ],
     caseStudyAvailable: true,
+    segment: "Quick Commerce",
     link: "https://www.notion.so/vijaybsehgal/Swish-Retention-Post-Order-Experience-from-12-to-25-25af8aca882d80f78959d111f801f3f0?source=copy_link"
   },
   {
@@ -138,6 +163,7 @@ export const PROJECTS: Project[] = [
       "Designed AI-powered smart cart that pre-fills from purchase history"
     ],
     caseStudyAvailable: true,
+    segment: "Quick Commerce",
     link: "https://www.notion.so/vijaybsehgal/Product-Sense-Blinkit-Smart-Cart-Reducing-Reorder-Time-by-95-4m-10s-25af8aca882d81bc8c91eb7856407f87?source=copy_link"
   },
   {
@@ -151,6 +177,7 @@ export const PROJECTS: Project[] = [
       "Designed granular muting UX preserving OTP/transaction notifications"
     ],
     caseStudyAvailable: true,
+    segment: "Consumer",
     link: "https://vijaybsehgal.notion.site/WhatsApp-India-Smart-Muting-for-Business-Messages-Teardown-PRD-4113bc4217a34bbb865c4aaa4b7d84c9"
   },
   {
@@ -164,6 +191,7 @@ export const PROJECTS: Project[] = [
       "Hybrid AI + human coach model reduced churn by keeping accountability high"
     ],
     caseStudyAvailable: true,
+    segment: "HealthTech",
     link: "https://vijaybsehgal.notion.site/The-Digital-Health-Coach-145c0cb389634f28bf18242bad389dc3"
   }
 ];
@@ -206,7 +234,7 @@ export const EDUCATION_DATA: Education[] = [
     degree: "B.Tech, Computer Science & Engineering",
     institution: "Kurukshetra University (HEC)",
     period: "2012 – 2016",
-    highlight: "Top 3% of the class | GPA 3.8/4.0 (All Rounder)",
+    highlight: "Top 2% of the class | GPA 3.8/4.0 (All Rounder)",
     location: "Haryana",
     type: "degree"
   },
@@ -263,4 +291,73 @@ export const BLOG_POSTS: BlogPost[] = [
     source: "linkedin",
     link: "https://www.linkedin.com/posts/vijay-b-sehgal_if-youre-like-me-you-forget-where-you-park-activity-7405532075950243841-tJJV?utm_source=share&utm_medium=member_desktop&rcm=ACoAABSqsuoBfT1HtIwaRuMhswF-qHJnDIiMfGc"
   }
+];
+
+// ==========================================
+// HIRE INFO — Powers the "Hire Me" strip
+// ==========================================
+export const HIRE_INFO: HireInfo = {
+  roles: ["Product Manager", "AI Product Manager", "0-1 Product"],
+  locations: ["Remote (India)", "Gurugram", "Bangalore", "Mumbai"],
+  availability: "Immediately available · No notice period",
+  calLink: "https://cal.com/vijay-b-sehgal",
+};
+
+// ==========================================
+// IMPACT METRICS — Powers "Proof of Impact"
+// ==========================================
+// Baselines use published industry benchmarks
+// where available.
+export const IMPACT_METRICS: ImpactMetric[] = [
+  {
+    label: "Teacher Onboarding Completion",
+    baseline: "60% (industry avg for LMS onboarding)",
+    action: "Redesigned guided onboarding with step-by-step examples & SOPs",
+    result: "78% completion (+18 pp)",
+    confidence: "Measured",
+    source: "WhiteHat Jr",
+  },
+  {
+    label: "Curriculum Rollout Speed",
+    baseline: "10–15 days per release cycle",
+    action: "Operationalised SOPs & standardised review workflows",
+    result: "5–7 days (−50%)",
+    confidence: "Measured",
+    source: "WhiteHat Jr",
+  },
+  {
+    label: "Student CSAT",
+    baseline: "4.0 / 5.0 (pre-intervention)",
+    action: "A/B tested content sequencing & feedback loops for 12k students",
+    result: "4.5 / 5.0",
+    confidence: "Measured",
+    source: "WhiteHat Jr",
+  },
+  {
+    label: "Course Completion Rate",
+    baseline: "~60% (avg for online upskilling programs in India)",
+    action: "Project-based curriculum + train-the-trainer TA model",
+    result: "75% (+15 pp)",
+    confidence: "Measured",
+    source: "Delta Learning",
+  },
+  {
+    label: "Post-Order Retention",
+    baseline: "~13% D30 (typical quick-commerce reorder rate)",
+    action: "Designed habit hooks, reorder nudges & social proof triggers",
+    result: "+12 pp retention, 2× reorder rate",
+    confidence: "Estimated",
+    source: "Swish (Capstone)",
+  },
+];
+
+// ==========================================
+// NOW / NEXT — What you're up to this quarter
+// ==========================================
+export const NOW_NEXT: NowNextItem[] = [
+  { category: "Learning", text: "Daily PM mock interviews & product case practice" },
+  { category: "Learning", text: "Reading about AI agents, LLM applications & product-led growth" },
+  { category: "Building", text: "Writing product insights & mini-teardowns" },
+  { category: "Exploring", text: "Actively interviewing for PM roles via LinkedIn, Naukri & Instahyre" },
+  { category: "Exploring", text: "Open to Consumer Tech, B2B SaaS, and AI-first product roles" },
 ];

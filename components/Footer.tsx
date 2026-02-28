@@ -1,3 +1,9 @@
+/**
+ * Footer — Page Footer
+ * =====================
+ * Social links and copyright. Appears at the very bottom
+ * of the page, above the floating Navbar.
+ */
 import React from 'react';
 import { SOCIAL_LINKS, PERSONAL_INFO } from '../constants';
 import { Heart } from 'lucide-react';

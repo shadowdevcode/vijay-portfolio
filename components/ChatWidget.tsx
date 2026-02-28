@@ -1,3 +1,17 @@
+/**
+ * ChatWidget — Floating AI Chat Assistant
+ * ==========================================
+ * A floating chat panel (bottom-right) powered by Google Gemini.
+ * Users can ask questions about Vijay's experience, skills,
+ * and projects. Includes quick-reply suggestions and a
+ * typing indicator.
+ *
+ * API flow: sends messages to /api/chat (see geminiService.ts).
+ * In dev mode, the Vite middleware handles this; in production,
+ * the Vercel serverless function does.
+ *
+ * ARIA: panel has role="dialog", aria-modal, aria-label for screen readers.
+ */
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Sparkles } from 'lucide-react';
 import { sendMessageToGemini } from '../services/geminiService';
@@ -94,7 +108,7 @@ const ChatWidget: React.FC = () => {
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-28 md:bottom-6 right-6 z-[70] w-[90vw] md:w-[400px] h-[520px] max-h-[80vh] bg-white rounded-2xl shadow-2xl border border-zinc-200 flex flex-col overflow-hidden">
+        <div role="dialog" aria-modal="true" aria-label="Chat with Vijay's AI Assistant" className="fixed bottom-28 md:bottom-6 right-6 z-[70] w-[90vw] md:w-[400px] h-[520px] max-h-[80vh] bg-white rounded-2xl shadow-2xl border border-zinc-200 flex flex-col overflow-hidden">
           {/* Header — branded gradient */}
           <div className="p-4 border-b border-zinc-100 flex justify-between items-center bg-gradient-to-r from-zinc-900 to-zinc-800 shrink-0">
             <div className="flex items-center gap-3">

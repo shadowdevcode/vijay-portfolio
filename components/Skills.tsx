@@ -1,3 +1,11 @@
+/**
+ * Skills — Filterable Skill Tags
+ * ================================
+ * Shows all skills grouped by category (Product, Execution,
+ * Data/Tech) with filter chips to toggle visibility.
+ *
+ * Data source: constants.tsx → SKILLS
+ */
 import React, { useState } from 'react';
 import { SKILLS } from '../constants';
 import {
