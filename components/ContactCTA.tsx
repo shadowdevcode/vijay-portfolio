@@ -62,7 +62,7 @@ const ContactCTA: React.FC = () => {
 
                     {/* Resume download */}
                     <a
-                        href="/resume.pdf"
+                        href="/Vijay_Sehgal_Product_Manager.pdf"
                         download
                         className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 text-white rounded-lg text-sm font-semibold hover:bg-zinc-700 transition-colors border border-zinc-700"
                     >
