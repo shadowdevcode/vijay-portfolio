@@ -42,6 +42,9 @@ export const sendMessageToGemini = async (userMessage: string): Promise<string> 
     }
 
     if (!response.ok) {
+      // #region agent log
+      fetch('http://127.0.0.1:7562/ingest/3992f3db-233a-4379-baf3-f531599e3b34',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'d564b1'},body:JSON.stringify({sessionId:'d564b1',location:'geminiService.ts:!ok',message:'api error response',data:{status:response.status,errorCode:data?.error?.code,errorMessage:data?.error?.message},timestamp:Date.now(),hypothesisId:'H_err'})}).catch(()=>{});
+      // #endregion
       // Use the structured error from the API
       const errorMessage = data?.error?.message || 'Something went wrong.';
 
