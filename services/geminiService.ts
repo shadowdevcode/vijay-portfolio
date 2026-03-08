@@ -12,17 +12,11 @@
 
 export const sendMessageToGemini = async (userMessage: string): Promise<string> => {
   try {
-    // #region agent log
-    fetch('http://127.0.0.1:7562/ingest/3992f3db-233a-4379-baf3-f531599e3b34',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'d564b1'},body:JSON.stringify({sessionId:'d564b1',location:'geminiService.ts:pre-fetch',message:'before fetch',data:{url:'/api/chat'},timestamp:Date.now(),hypothesisId:'H1'})}).catch(()=>{});
-    // #endregion
     const response = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: userMessage }),
     });
-    // #region agent log
-    fetch('http://127.0.0.1:7562/ingest/3992f3db-233a-4379-baf3-f531599e3b34',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'d564b1'},body:JSON.stringify({sessionId:'d564b1',location:'geminiService.ts:after-fetch',message:'after fetch',data:{status:response.status,ok:response.ok,contentType:response.headers.get('content-type')},timestamp:Date.now(),hypothesisId:'H2'})}).catch(()=>{});
-    // #endregion
     const contentType = response.headers.get('content-type') || '';
     const text = await response.text();
     let data: { reply?: string; error?: { code?: string; message?: string } };
@@ -42,9 +36,6 @@ export const sendMessageToGemini = async (userMessage: string): Promise<string> 
     }
 
     if (!response.ok) {
-      // #region agent log
-      fetch('http://127.0.0.1:7562/ingest/3992f3db-233a-4379-baf3-f531599e3b34',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'d564b1'},body:JSON.stringify({sessionId:'d564b1',location:'geminiService.ts:!ok',message:'api error response',data:{status:response.status,errorCode:data?.error?.code,errorMessage:data?.error?.message},timestamp:Date.now(),hypothesisId:'H_err'})}).catch(()=>{});
-      // #endregion
       // Use the structured error from the API
       const errorMessage = data?.error?.message || 'Something went wrong.';
 
@@ -60,10 +51,6 @@ export const sendMessageToGemini = async (userMessage: string): Promise<string> 
 
     return data.reply || "I didn't get a response regarding that.";
   } catch (error) {
-    // #region agent log
-    const err = error instanceof Error ? error : new Error(String(error));
-    fetch('http://127.0.0.1:7562/ingest/3992f3db-233a-4379-baf3-f531599e3b34',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'d564b1'},body:JSON.stringify({sessionId:'d564b1',location:'geminiService.ts:catch',message:'catch',data:{name:err.name,message:err.message},timestamp:Date.now(),hypothesisId:'H1_H2_H5'})}).catch(()=>{});
-    // #endregion
     console.error('Chat service error:', error);
     return "I'm having trouble connecting right now. Please try again in a moment.";
   }
