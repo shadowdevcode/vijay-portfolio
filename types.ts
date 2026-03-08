@@ -60,9 +60,11 @@ export interface Project {
 }
 
 // ---- Skills ----
+export type SkillCategory = 'Product' | 'Execution' | 'Data/Tech';
+
 export interface Skill {
   name: string;
-  category: string;
+  category: SkillCategory;
   icon?: string;
   featured?: boolean;
 }

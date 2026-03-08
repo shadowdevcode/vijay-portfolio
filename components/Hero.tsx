@@ -15,7 +15,7 @@ import { PERSONAL_INFO, SOCIAL_LINKS, HIRE_INFO } from '../constants';
 import { MapPin, Calendar, Briefcase, Clock } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const resumeLink = SOCIAL_LINKS.find(l => l.name === 'Resume');
+  const resumeLink = SOCIAL_LINKS.find((l) => l.name === 'Resume');
 
   return (
     <section id="home" className="pt-8 pb-4 md:pt-24 md:pb-8 scroll-mt-20">
@@ -58,7 +58,10 @@ const Hero: React.FC = () => {
           )}
 
           {/* Summary */}
-          <p id="about" className="text-zinc-600 text-base md:text-lg leading-relaxed mb-5 max-w-xl scroll-mt-20">
+          <p
+            id="about"
+            className="text-zinc-600 text-base md:text-lg leading-relaxed mb-5 max-w-xl scroll-mt-20"
+          >
             {PERSONAL_INFO.summary}
           </p>
 
@@ -96,7 +99,7 @@ const Hero: React.FC = () => {
                 <resumeLink.icon size={16} /> View Resume
               </a>
             )}
-            {SOCIAL_LINKS.filter(l => l.name !== 'Resume').map((link) => (
+            {SOCIAL_LINKS.filter((l) => l.name !== 'Resume').map((link) => (
               <a
                 key={link.name}
                 href={link.url}
@@ -128,7 +131,10 @@ const Hero: React.FC = () => {
             className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-zinc-200 items-center justify-center text-4xl font-bold text-zinc-500 border-2 border-white shadow-lg ring-1 ring-zinc-100"
             style={{ display: 'none' }}
           >
-            {PERSONAL_INFO.name.split(' ').map(n => n[0]).join('')}
+            {PERSONAL_INFO.name
+              .split(' ')
+              .map((n) => n[0])
+              .join('')}
           </div>
         </div>
       </div>

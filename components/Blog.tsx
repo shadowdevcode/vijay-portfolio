@@ -10,6 +10,7 @@
 import React from 'react';
 import { BLOG_POSTS } from '../constants';
 import { ArrowRight, Clock, Linkedin, ExternalLink, BookOpen } from 'lucide-react';
+import type { BlogPost } from '../types';
 
 // Format date from "2025-02-10" to "Feb 10, 2025"
 const formatDate = (dateStr: string): string => {
@@ -21,19 +22,25 @@ const formatDate = (dateStr: string): string => {
   }
 };
 
-const getSourceIcon = (source?: string) => {
+const getSourceIcon = (source?: BlogPost['source']) => {
   switch (source) {
-    case 'linkedin': return <Linkedin size={14} className="text-blue-600" />;
-    case 'medium': return <BookOpen size={14} className="text-zinc-700" />;
-    default: return <ExternalLink size={14} className="text-zinc-400" />;
+    case 'linkedin':
+      return <Linkedin size={14} className="text-blue-600" />;
+    case 'medium':
+      return <BookOpen size={14} className="text-zinc-700" />;
+    default:
+      return <ExternalLink size={14} className="text-zinc-400" />;
   }
 };
 
-const getSourceLabel = (source?: string) => {
+const getSourceLabel = (source?: BlogPost['source']) => {
   switch (source) {
-    case 'linkedin': return 'Open on LinkedIn';
-    case 'medium': return 'Read on Medium';
-    default: return 'Read Post';
+    case 'linkedin':
+      return 'Open on LinkedIn';
+    case 'medium':
+      return 'Read on Medium';
+    default:
+      return 'Read Post';
   }
 };
 
@@ -51,19 +58,23 @@ const Blog: React.FC = () => {
           </h2>
           <div className="h-1 w-16 bg-zinc-900"></div>
         </div>
-        <a href="#" className="text-sm font-bold text-zinc-900 hover:text-blue-600 flex items-center gap-2 transition-colors group">
-          READ ALL POSTS <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+        <a
+          href="#"
+          className="text-sm font-bold text-zinc-900 hover:text-blue-600 flex items-center gap-2 transition-colors group"
+        >
+          READ ALL POSTS{' '}
+          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
 
       <div className="grid gap-5">
         {BLOG_POSTS.map((post, index) => {
-          const isExternal = post.link && post.link !== "#";
+          const isExternal = post.link && post.link !== '#';
           return (
             <a
               key={index}
-              href={post.link || "#"}
-              target={isExternal ? "_blank" : "_self"}
+              href={post.link || '#'}
+              target={isExternal ? '_blank' : '_self'}
               rel="noopener noreferrer"
               className="group flex bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-zinc-300 transition-all duration-300 cursor-pointer"
             >
@@ -87,8 +98,13 @@ const Blog: React.FC = () => {
                     <Clock size={12} /> {post.readTime} read
                   </span>
                   <div className="flex gap-2 sm:ml-auto">
-                    {post.tags.map(tag => (
-                      <span key={tag} className="bg-zinc-100 px-2 py-0.5 rounded text-zinc-500 uppercase tracking-wider text-[10px] font-semibold">{tag}</span>
+                    {post.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-zinc-100 px-2 py-0.5 rounded text-zinc-500 uppercase tracking-wider text-[10px] font-semibold"
+                      >
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -96,16 +112,17 @@ const Blog: React.FC = () => {
                 <h3 className="text-lg font-bold text-zinc-900 mb-2 group-hover:text-blue-600 transition-colors font-serif">
                   {post.title}
                 </h3>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-3">
-                  {post.excerpt}
-                </p>
+                <p className="text-zinc-500 text-sm leading-relaxed mb-3">{post.excerpt}</p>
 
                 {/* Source-specific CTA */}
                 {isExternal && (
                   <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-400 group-hover:text-blue-600 transition-colors">
                     {getSourceIcon(post.source)}
                     {getSourceLabel(post.source)}
-                    <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight
+                      size={12}
+                      className="group-hover:translate-x-0.5 transition-transform"
+                    />
                   </span>
                 )}
 

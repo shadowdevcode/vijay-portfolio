@@ -14,6 +14,12 @@
  */
 
 import React, { useState, useEffect, useRef } from 'react';
+import {
+  SCROLL_SPY_TOP_OFFSET,
+  SCROLL_SPY_VISIBILITY_RATIO,
+  INTERSECTION_THRESHOLD,
+  INTERSECTION_ROOT_MARGIN,
+} from './config';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProofOfImpact from './components/ProofOfImpact';
@@ -44,7 +50,10 @@ const App: React.FC = () => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top >= -150 && rect.top <= window.innerHeight / 2.5) {
+          if (
+            rect.top >= SCROLL_SPY_TOP_OFFSET &&
+            rect.top <= window.innerHeight / SCROLL_SPY_VISIBILITY_RATIO
+          ) {
             setActiveSection(section);
             break;
           }
@@ -63,18 +72,18 @@ const App: React.FC = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-fade-in-up');
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: INTERSECTION_THRESHOLD, rootMargin: INTERSECTION_ROOT_MARGIN }
     );
 
     const sections = mainRef.current?.querySelectorAll('section:not(#home)');
-    sections?.forEach(section => {
+    sections?.forEach((section) => {
       (section as HTMLElement).style.opacity = '0';
       observer.observe(section);
     });

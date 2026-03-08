@@ -23,11 +23,13 @@ const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
   // Derive unique segments from data
-  const segments = ['All', ...Array.from(new Set(PROJECTS.map(p => p.segment).filter(Boolean))) as string[]];
+  const segments = [
+    'All',
+    ...(Array.from(new Set(PROJECTS.map((p) => p.segment).filter(Boolean))) as string[]),
+  ];
 
-  const filtered = activeFilter === 'All'
-    ? PROJECTS
-    : PROJECTS.filter(p => p.segment === activeFilter);
+  const filtered =
+    activeFilter === 'All' ? PROJECTS : PROJECTS.filter((p) => p.segment === activeFilter);
 
   return (
     <section id="projects" className="py-12 scroll-mt-20">
@@ -40,7 +42,8 @@ const Projects: React.FC = () => {
         {/* Filter chips */}
         <div className="flex flex-wrap gap-2">
           {segments.map((seg) => {
-            const count = seg === 'All' ? PROJECTS.length : PROJECTS.filter(p => p.segment === seg).length;
+            const count =
+              seg === 'All' ? PROJECTS.length : PROJECTS.filter((p) => p.segment === seg).length;
             const isActive = activeFilter === seg;
             return (
               <button
@@ -48,13 +51,17 @@ const Projects: React.FC = () => {
                 onClick={() => setActiveFilter(seg)}
                 className={`
                   px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200
-                  ${isActive
-                    ? 'bg-zinc-900 text-white shadow-md'
-                    : 'bg-white text-zinc-600 border border-zinc-200 hover:border-zinc-400'}
+                  ${
+                    isActive
+                      ? 'bg-zinc-900 text-white shadow-md'
+                      : 'bg-white text-zinc-600 border border-zinc-200 hover:border-zinc-400'
+                  }
                 `}
               >
                 {seg}
-                <span className={`ml-1 px-1.5 py-0.5 rounded-full text-[10px] ${isActive ? 'bg-zinc-800 text-zinc-300' : 'bg-zinc-100 text-zinc-500'}`}>
+                <span
+                  className={`ml-1 px-1.5 py-0.5 rounded-full text-[10px] ${isActive ? 'bg-zinc-800 text-zinc-300' : 'bg-zinc-100 text-zinc-500'}`}
+                >
                   {count}
                 </span>
               </button>
@@ -67,12 +74,12 @@ const Projects: React.FC = () => {
         {filtered.map((project, index) => (
           <a
             key={index}
-            href={project.link || "#"}
-            target={project.link && project.link !== "#" ? "_blank" : "_self"}
+            href={project.link || '#'}
+            target={project.link && project.link !== '#' ? '_blank' : '_self'}
             rel="noopener noreferrer"
             className={`
                 flex flex-col bg-white border border-zinc-200 border-l-4 ${PROJECT_ACCENTS[index % PROJECT_ACCENTS.length]} rounded-xl p-5 md:p-6 transition-all duration-300 group h-full
-                ${project.link && project.link !== "#" ? "hover:shadow-lg hover:-translate-y-0.5 cursor-pointer" : "cursor-default hover:shadow-md"}
+                ${project.link && project.link !== '#' ? 'hover:shadow-lg hover:-translate-y-0.5 cursor-pointer' : 'cursor-default hover:shadow-md'}
             `}
           >
             {/* Header: Icon + Title + Status */}
@@ -112,7 +119,10 @@ const Projects: React.FC = () => {
             {project.highlights && project.highlights.length > 0 && (
               <ul className="space-y-1 mb-3">
                 {project.highlights.map((highlight, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs text-zinc-500 leading-relaxed">
+                  <li
+                    key={i}
+                    className="flex items-start gap-2 text-xs text-zinc-500 leading-relaxed"
+                  >
                     <span className="text-blue-400 mt-0.5 shrink-0">&#x2022;</span>
                     <span>{highlight}</span>
                   </li>
@@ -124,7 +134,10 @@ const Projects: React.FC = () => {
             {project.metrics && project.metrics.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.metrics.map((metric, i) => (
-                  <span key={i} className="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  <span
+                    key={i}
+                    className="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200"
+                  >
                     {metric}
                   </span>
                 ))}
@@ -140,12 +153,12 @@ const Projects: React.FC = () => {
                 </span>
               ))}
 
-              {project.caseStudyAvailable && project.link && project.link !== "#" && (
+              {project.caseStudyAvailable && project.link && project.link !== '#' && (
                 <div className="ml-auto flex items-center gap-1 text-xs font-medium text-zinc-400 group-hover:text-blue-600 transition-colors">
                   Read Case Study <ArrowUpRight size={12} />
                 </div>
               )}
-              {project.caseStudyAvailable && (!project.link || project.link === "#") && (
+              {project.caseStudyAvailable && (!project.link || project.link === '#') && (
                 <div className="ml-auto text-[10px] font-bold uppercase tracking-wider text-zinc-300">
                   Coming Soon
                 </div>

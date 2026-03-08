@@ -26,14 +26,14 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| **Framework** | React 19 + TypeScript |
-| **Build** | Vite 5 |
-| **Styling** | Tailwind CSS 3 (local pipeline, not CDN) |
-| **AI Chat** | Google Gemini 2.5 Flash (server-side proxy) |
-| **Icons** | Lucide React |
-| **Hosting** | Vercel (serverless functions for API) |
+| Layer         | Technology                                  |
+| ------------- | ------------------------------------------- |
+| **Framework** | React 19 + TypeScript                       |
+| **Build**     | Vite 5                                      |
+| **Styling**   | Tailwind CSS 3 (local pipeline, not CDN)    |
+| **AI Chat**   | Google Gemini 2.5 Flash (server-side proxy) |
+| **Icons**     | Lucide React                                |
+| **Hosting**   | Vercel (serverless functions for API)       |
 
 ---
 
@@ -98,7 +98,9 @@ Nav order matches: **Home → About → Projects → Work → Skills → Writing
 **All portfolio data lives in one file:** [`constants.tsx`](constants.tsx)
 
 ### Adding a new case study
+
 Add an entry to the `PROJECTS` array:
+
 ```tsx
 {
   title: "Project Name",
@@ -114,7 +116,9 @@ Add an entry to the `PROJECTS` array:
 ```
 
 ### Adding a new impact metric
+
 Add to the `IMPACT_METRICS` array:
+
 ```tsx
 {
   label: "Metric Name",
@@ -127,18 +131,20 @@ Add to the `IMPACT_METRICS` array:
 ```
 
 ### Adding a blog post
+
 Add to `BLOG_POSTS` with `title`, `excerpt`, `date`, `readTime`, `tags`, `link`, and `source`.
 
 ### Adding your resume PDF
+
 Place your resume at **`public/resume.pdf`**. The "Download Resume" button in Hero and ContactCTA is already wired to `/resume.pdf`.
 
 ---
 
 ## Environment Variables
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `GEMINI_API_KEY` | Yes | Google Gemini API key. **Server-side only** — never exposed to the browser. In dev, read from `.env`. In production, set in Vercel dashboard. |
+| Variable         | Required | Description                                                                                                                                   |
+| ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `GEMINI_API_KEY` | Yes      | Google Gemini API key. **Server-side only** — never exposed to the browser. In dev, read from `.env`. In production, set in Vercel dashboard. |
 
 ---
 
@@ -183,17 +189,18 @@ The API key **never** reaches the browser in either environment.
 4. Deploy. Vercel auto-detects the Vite build and `/api` serverless functions.
 
 For a custom domain:
+
 - Go to **Vercel → Settings → Domains** → Add your domain and follow DNS instructions.
 
 ---
 
 ## Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start local dev server (port 5173) with chat middleware |
-| `npm run build` | Production build to `dist/` |
-| `npm run preview` | Preview the production build locally |
+| Command           | Description                                             |
+| ----------------- | ------------------------------------------------------- |
+| `npm run dev`     | Start local dev server (port 5173) with chat middleware |
+| `npm run build`   | Production build to `dist/`                             |
+| `npm run preview` | Preview the production build locally                    |
 
 ---
 

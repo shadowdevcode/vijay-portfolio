@@ -8,49 +8,53 @@
  */
 import React, { useState } from 'react';
 import { SKILLS } from '../constants';
-import {
-  Target,
-  Database,
-  Layers,
-  Zap,
-  Layout
-} from 'lucide-react';
+import { Target, Database, Layers, Zap, Layout } from 'lucide-react';
+import type { SkillCategory } from '../types';
 
 const Skills: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All Skills');
 
-  const categories = ['All Skills', ...Array.from(new Set(SKILLS.map(s => s.category)))];
+  const categories = ['All Skills', ...Array.from(new Set(SKILLS.map((s) => s.category)))];
 
-  const getCategoryIcon = (category: string) => {
+  const getCategoryIcon = (category: string | SkillCategory) => {
     switch (category) {
-      case 'All Skills': return <Layers size={14} />;
-      case 'Product': return <Target size={14} />;
-      case 'Execution': return <Zap size={14} />;
-      case 'Data/Tech': return <Database size={14} />;
-      default: return <Layout size={14} />;
+      case 'All Skills':
+        return <Layers size={14} />;
+      case 'Product':
+        return <Target size={14} />;
+      case 'Execution':
+        return <Zap size={14} />;
+      case 'Data/Tech':
+        return <Database size={14} />;
+      default:
+        return <Layout size={14} />;
     }
   };
 
-  const getSkillIcon = (category: string) => {
+  const getSkillIcon = (category: SkillCategory) => {
     switch (category) {
-      case 'Product': return <Target size={12} />;
-      case 'Execution': return <Zap size={12} />;
-      case 'Data/Tech': return <Database size={12} />;
-      default: return <Layout size={12} />;
+      case 'Product':
+        return <Target size={12} />;
+      case 'Execution':
+        return <Zap size={12} />;
+      case 'Data/Tech':
+        return <Database size={12} />;
+      default:
+        return <Layout size={12} />;
     }
   };
 
-  const filteredSkills = activeCategory === 'All Skills'
-    ? SKILLS
-    : SKILLS.filter(s => s.category === activeCategory);
+  const filteredSkills =
+    activeCategory === 'All Skills' ? SKILLS : SKILLS.filter((s) => s.category === activeCategory);
 
   // Group skills by category for "All Skills" view
-  const groupedSkills = activeCategory === 'All Skills'
-    ? Array.from(new Set(SKILLS.map(s => s.category))).map(cat => ({
-      category: cat,
-      skills: SKILLS.filter(s => s.category === cat)
-    }))
-    : null;
+  const groupedSkills =
+    activeCategory === 'All Skills'
+      ? Array.from(new Set(SKILLS.map((s) => s.category))).map((cat) => ({
+          category: cat,
+          skills: SKILLS.filter((s) => s.category === cat),
+        }))
+      : null;
 
   return (
     <section id="skills" className="py-12 scroll-mt-20">
@@ -64,9 +68,10 @@ const Skills: React.FC = () => {
       {/* Filter Tabs */}
       <div className="flex flex-wrap gap-2 mb-8">
         {categories.map((category) => {
-          const count = category === 'All Skills'
-            ? SKILLS.length
-            : SKILLS.filter(s => s.category === category).length;
+          const count =
+            category === 'All Skills'
+              ? SKILLS.length
+              : SKILLS.filter((s) => s.category === category).length;
           const isActive = activeCategory === category;
 
           return (
@@ -75,17 +80,21 @@ const Skills: React.FC = () => {
               onClick={() => setActiveCategory(category)}
               className={`
                 flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-semibold transition-all duration-300
-                ${isActive
-                  ? 'bg-zinc-900 text-white shadow-md'
-                  : 'bg-white text-zinc-600 border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50'}
+                ${
+                  isActive
+                    ? 'bg-zinc-900 text-white shadow-md'
+                    : 'bg-white text-zinc-600 border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50'
+                }
               `}
             >
               {getCategoryIcon(category)}
               {category}
-              <span className={`
+              <span
+                className={`
                 ml-0.5 px-1.5 py-0.5 rounded-full text-[10px] 
                 ${isActive ? 'bg-zinc-800 text-zinc-300' : 'bg-zinc-100 text-zinc-500'}
-              `}>
+              `}
+              >
                 {count}
               </span>
             </button>
@@ -96,9 +105,11 @@ const Skills: React.FC = () => {
       {/* Skills — grouped when "All Skills" is active */}
       {groupedSkills ? (
         <div className="space-y-6">
-          {groupedSkills.map(group => (
+          {groupedSkills.map((group) => (
             <div key={group.category}>
-              <p className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">{group.category}</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">
+                {group.category}
+              </p>
               <div className="flex flex-wrap gap-2.5">
                 {group.skills.map((skill, index) => (
                   <div
