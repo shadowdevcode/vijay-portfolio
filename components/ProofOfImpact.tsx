@@ -42,16 +42,22 @@ const ProofOfImpact: React.FC = () => {
 
       {/* Compact card grid — tighter spacing, less padding */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {IMPACT_METRICS.map((metric, index) => (
+        {IMPACT_METRICS.map((metric, index) => {
+          const labelId = `impact-metric-${index}`;
+          return (
           <div
             key={index}
+            role="article"
+            aria-labelledby={labelId}
             className="bg-white border border-zinc-200 rounded-xl p-4 hover:shadow-sm transition-all"
           >
             {/* Header row: icon + label + confidence */}
             <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2 min-w-0">
+              <div className="flex items-center gap-2 min-w-0 flex-1">
                 <TrendingUp size={14} className="text-emerald-600 shrink-0" />
-                <h3 className="text-xs font-bold text-zinc-900 truncate">{metric.label}</h3>
+                <h3 id={labelId} className="text-xs font-bold text-zinc-900 break-words">
+                  {metric.label}
+                </h3>
               </div>
               <span
                 className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full border shrink-0 ml-2 ${confidenceColor(metric.confidence)}`}
@@ -61,14 +67,14 @@ const ProofOfImpact: React.FC = () => {
             </div>
 
             {/* Before → After in compact layout */}
-            <div className="flex items-center gap-2 mb-2 text-xs">
-              <span className="text-zinc-500">{metric.baseline.split('(')[0].trim()}</span>
+            <div className="flex items-center gap-2 mb-2 text-xs flex-wrap">
+              <span className="text-zinc-500 break-words">{metric.baseline}</span>
               <ArrowRight size={10} className="text-zinc-300 shrink-0" />
-              <span className="font-bold text-emerald-700">{metric.result}</span>
+              <span className="font-bold text-emerald-700 break-words">{metric.result}</span>
             </div>
 
-            {/* Action — small italic */}
-            <p className="text-[11px] text-zinc-400 italic leading-snug line-clamp-2">
+            {/* Action — small italic, full text visible */}
+            <p className="text-[11px] text-zinc-400 italic leading-snug">
               {metric.action}
             </p>
 
@@ -77,7 +83,8 @@ const ProofOfImpact: React.FC = () => {
               <span className="text-[10px] text-zinc-400">@ {metric.source}</span>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

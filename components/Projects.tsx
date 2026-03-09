@@ -78,14 +78,14 @@ const Projects: React.FC = () => {
             target={project.link && project.link !== '#' ? '_blank' : '_self'}
             rel="noopener noreferrer"
             className={`
-                flex flex-col bg-white border border-zinc-200 border-l-4 ${PROJECT_ACCENTS[index % PROJECT_ACCENTS.length]} rounded-xl p-5 md:p-6 transition-all duration-300 group h-full
+                flex flex-col min-w-0 bg-white border border-zinc-200 border-l-4 ${PROJECT_ACCENTS[index % PROJECT_ACCENTS.length]} rounded-xl p-5 md:p-6 transition-all duration-300 group h-full
                 ${project.link && project.link !== '#' ? 'hover:shadow-lg hover:-translate-y-0.5 cursor-pointer' : 'cursor-default hover:shadow-md'}
             `}
           >
-            {/* Header: Icon + Title + Status */}
-            <div className="flex items-center gap-2.5 mb-3">
-              <BookOpen size={18} className="text-zinc-400 shrink-0" />
-              <h3 className="text-base font-bold text-zinc-900 group-hover:text-blue-600 transition-colors truncate">
+            {/* Header: Icon + Title + Status — min-w-0 so title can wrap within card */}
+            <div className="flex items-start gap-2.5 mb-3 min-w-0">
+              <BookOpen size={18} className="text-zinc-400 shrink-0 mt-0.5" />
+              <h3 className="min-w-0 flex-1 text-base font-bold text-zinc-900 group-hover:text-blue-600 transition-colors break-words leading-snug">
                 {project.title}
               </h3>
               <span className="ml-auto px-2.5 py-1 rounded-full border border-zinc-200 text-[10px] text-zinc-500 font-medium shrink-0 bg-zinc-50">

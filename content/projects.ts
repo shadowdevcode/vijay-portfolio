@@ -7,6 +7,21 @@ import type { Project } from '../types';
 
 export const PROJECTS: Project[] = [
   {
+    title: 'AI Product Operating System',
+    subtitle: 'Builder Infrastructure',
+    description:
+      'A 14-stage, 16-agent workflow engine that lets a solo PM ship validated MVPs without an engineering team. Every completed project writes its failures back as enforced guardrails, making each build faster and more reliable than the last.',
+    tags: ['#AI Agents', '#Systems Thinking', '#Product Ops'],
+    metrics: ['3 Products Shipped', '0 Engineers', 'Self-Improving'],
+    highlights: [
+      'Shipped 3 full products end-to-end: InboxPulse, AI Finance Advisor, AI PM Portfolio Generator',
+      'Postmortem-to-learning loop enforces rules from past failures into future builds automatically',
+    ],
+    caseStudyAvailable: true,
+    segment: 'AI',
+    link: 'https://www.notion.so/vijaybsehgal/AI-Product-Operating-System-Shipping-MVPs-Without-an-Engineering-Team-31ef8aca882d808d9a77f2d424006b9e?source=copy_link',
+  },
+  {
     title: 'GitHub-for-PMs Agent',
     subtitle: 'Builder Tool',
     description:

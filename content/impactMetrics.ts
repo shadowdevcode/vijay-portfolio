@@ -47,4 +47,13 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     confidence: 'Estimated',
     source: 'Swish (Capstone)',
   },
+  {
+    label: 'Products Shipped (Solo PM, No Engineering Team)',
+    baseline: '0 (ideas blocked without eng capacity)',
+    action:
+      'Built 14-stage, 16-agent AI Product OS; each project writes postmortem lessons back as enforced rules for future builds',
+    result: '3+ products shipped end-to-end; system improves with every cycle — more in progress',
+    confidence: 'Measured',
+    source: 'AI Product OS (Personal)',
+  },
 ];

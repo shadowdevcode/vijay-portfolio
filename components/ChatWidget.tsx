@@ -141,20 +141,40 @@ const ChatWidget: React.FC = () => {
     }
   };
 
-  // Simple markdown bold rendering with HTML sanitization
+  // Bold + URL rendering with HTML sanitization; URLs become clickable links
   const renderText = (text: string) => {
-    // Sanitize: strip any HTML tags
     const sanitized = text.replace(/<[^>]*>/g, '');
-    const parts = sanitized.split(/(\*\*[^*]+\*\*)/g);
-    return parts.map((part, i) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
+    const urlRegex = /(https?:\/\/[^\s<>"']+)/g;
+    const segments = sanitized.split(urlRegex);
+    return segments.map((segment, i) => {
+      if (segment.match(/^https?:\/\//)) {
         return (
-          <strong key={i} className="font-semibold">
-            {part.slice(2, -2)}
-          </strong>
+          <a
+            key={i}
+            href={segment}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline hover:text-blue-700 break-all"
+          >
+            {segment}
+          </a>
         );
       }
-      return part;
+      const parts = segment.split(/(\*\*[^*]+\*\*)/g);
+      return (
+        <React.Fragment key={i}>
+          {parts.map((part, j) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+              return (
+                <strong key={j} className="font-semibold">
+                  {part.slice(2, -2)}
+                </strong>
+              );
+            }
+            return part;
+          })}
+        </React.Fragment>
+      );
     });
   };
 

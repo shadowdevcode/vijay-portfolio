@@ -53,6 +53,7 @@ Founder & Head of Operations at Delta Learning (Aug 2019 – Nov 2020). Founded 
 Software Developer (Backend) at AcadView (July 2018 – Aug 2019). EdTech upskilling graduates (Acquired by Upgrad). Shipped Github verification & duplicate detection in LMS. Verified placement rate: ~80% across 2 cohorts (n≈200).
 
 Projects:
+AI Product Operating System: 14-stage, 16-agent workflow engine; solo PM ships validated MVPs without an engineering team. 3 products shipped (InboxPulse, AI Finance Advisor, AI PM Portfolio Generator). Metrics: 3 Products Shipped, 0 Engineers, Self-Improving. Case study: https://www.notion.so/vijaybsehgal/AI-Product-Operating-System-Shipping-MVPs-Without-an-Engineering-Team-31ef8aca882d808d9a77f2d424006b9e?source=copy_link
 GitHub-for-PMs Agent: Built a working AI Agent that auto-summarizes case studies and generates portfolio visuals. Metrics: 78% Activation, 90% Faster Builds.
 Swish Quick-Commerce (Airtribe Capstone · 9/10 · Industry PM Reviewed): Redesigned post-order experience through targeted UX flows, nudges, and habit hooks. Metrics: 2x Reorder Rate, +12pp Retention.
 Blinkit Growth Teardown: Reverse-engineered Blinkit's purchase history flow and designed an AI pre-fill feature concept. Metrics: Projected +25% Conv., AI Pre-fill Design.
