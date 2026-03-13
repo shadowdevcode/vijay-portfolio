@@ -1,6 +1,7 @@
 /**
  * Work experience — job timeline
  * Used by Experience section
+ * Last synced with resume: 2025-03
  */
 
 import type { Job } from '../types';
@@ -8,7 +9,7 @@ import type { Job } from '../types';
 export const EXPERIENCE: Job[] = [
   {
     company: 'Independent PM Practice',
-    role: 'AI Product Projects',
+    role: 'Product Strategy, Prototyping & AI Workflows',
     period: '2025 - Present',
     location: 'Remote',
     type: 'Remote',
@@ -16,29 +17,26 @@ export const EXPERIENCE: Job[] = [
     featured: true,
     badges: ['Industry Case Studies', 'AI Agents', 'Teardowns', 'Portfolio'],
     context:
-      'Practising PM workflows across consumer tech and SaaS domains through structured case studies, prototypes, and AI-native tooling, reviewed by senior PMs and industry mentors',
+      'Solo PM shipping products via a 12-stage AI Product OS; equivalent to 5 people, 3 months, ₹30–50L — actual: one PM, ₹5k API spend.',
     impactBullets: [
-      'Diagnosed low repeat-purchase on Swish; redesigned post-order UX with nudges and habit hooks — projected 7-day reorder from 12% to 24% (2×)',
-      "Reverse-engineered Blinkit's purchase history flow; designed AI pre-fill feature — projected +25% repeat conversion",
-      'Completed 100+ mock PM interviews on Stellar Peers covering product sense, design, and execution',
-      'Built this AI-powered portfolio website with a Gemini chatbot, serverless API, and recruiter-first UX',
+      'Shipped 3 products in 7 days (AI Product OS); no engineering team',
+      'Built this portfolio with Gemini chatbot, serverless API, recruiter-first UX',
     ],
     achievements: [],
     link: 'https://vijaybsehgal.notion.site/Vijay-s-Portfolio-25af8aca882d80bba710ec33c119b28e',
   },
   {
     company: "WhiteHat Jr (Byjus')",
-    role: 'Product Operations Lead: LMS & Curriculum',
+    role: 'Product Owner: LMS & Curriculum',
     period: 'Nov 2020 – May 2022',
     location: 'Mumbai',
     type: 'Hybrid',
     logo: 'whitehat',
-    context: "India's leading K-12 live coding platform, 12k+ students",
+    context: "India's leading K-12 live coding platform — ~150k students",
     impactBullets: [
-      'Curriculum rollout: 10-15 → 5-7 days (-50%)',
+      'Curriculum rollout: 10–15 → 5–7 days (−50%)',
       'Teacher onboarding: 60% → 78% completion',
-      'Support tickets: -50% (operationalised SOPs)',
-      'CSAT: 4.0 → 4.5 for 12k students (A/B tested)',
+      'Support tickets: −50%; CSAT +12.5% (~150k students)',
     ],
     achievements: [],
   },
@@ -49,11 +47,10 @@ export const EXPERIENCE: Job[] = [
     location: 'Haryana',
     type: 'Hybrid',
     logo: 'delta',
-    context: 'Founded offline EdTech, project-based upskilling for 600+ students',
+    context: 'Founded offline EdTech, 600+ students, project-based upskilling',
     impactBullets: [
-      'Revenue: ₹1.2 Cr ARR, 30% net margin',
-      'Completion rate: 75% (vs 60% benchmark)',
-      'TA efficiency: +20% via train-the-trainer program',
+      '₹1.2 Cr ARR, ~30% net margin',
+      'Completion ~80% vs ~60% benchmark',
     ],
     achievements: [],
   },
@@ -64,10 +61,9 @@ export const EXPERIENCE: Job[] = [
     location: 'Gurugram',
     type: 'On Site',
     logo: 'acadview',
-    context: 'EdTech upskilling graduates (Acquired by Upgrad)',
+    context: 'EdTech upskilling (Acquired by Upgrad)',
     impactBullets: [
-      'Shipped Github verification & duplicate detection in LMS',
-      'Verified placement rate: ~80% across 2 cohorts (n≈200)',
+      'CSAT ~25%; placement-ready ~80% across 2 cohorts (n≈250)',
     ],
     achievements: [],
   },

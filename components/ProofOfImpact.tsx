@@ -66,17 +66,12 @@ const ProofOfImpact: React.FC = () => {
               </span>
             </div>
 
-            {/* Before → After in compact layout */}
-            <div className="flex items-center gap-2 mb-2 text-xs flex-wrap">
+            {/* One-line baseline → result (action omitted for scannability) */}
+            <div className="flex items-center gap-2 text-xs flex-wrap">
               <span className="text-zinc-500 break-words">{metric.baseline}</span>
               <ArrowRight size={10} className="text-zinc-300 shrink-0" />
               <span className="font-bold text-emerald-700 break-words">{metric.result}</span>
             </div>
-
-            {/* Action — small italic, full text visible */}
-            <p className="text-[11px] text-zinc-400 italic leading-snug">
-              {metric.action}
-            </p>
 
             {/* Source */}
             <div className="mt-2 pt-2 border-t border-zinc-50">

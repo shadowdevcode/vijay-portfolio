@@ -16,20 +16,21 @@ import { MapPin, Calendar, Briefcase, Clock } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const resumeLink = SOCIAL_LINKS.find((l) => l.name === 'Resume');
+  const leadProof = 'leadBuilderProof' in PERSONAL_INFO ? (PERSONAL_INFO as { leadBuilderProof?: string }).leadBuilderProof : undefined;
 
   return (
     <section id="home" className="pt-8 pb-4 md:pt-24 md:pb-8 scroll-mt-20">
       <div className="flex flex-col-reverse md:flex-row md:items-start md:justify-between gap-8">
         {/* Text content */}
         <div className="flex-1">
-          <p className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-3">
-            Building Products People Love
+          <p className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-2">
+            Building products people love
           </p>
           <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-2 font-serif">
             {PERSONAL_INFO.name}
           </h1>
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <p className="text-lg text-zinc-600 italic font-serif">{PERSONAL_INFO.title}</p>
+            <p className="text-base md:text-lg text-zinc-600 font-medium">{PERSONAL_INFO.title}</p>
             <span className="text-zinc-300">•</span>
             <span className="flex items-center gap-1 text-sm text-zinc-500">
               <MapPin size={14} /> {PERSONAL_INFO.location}
@@ -60,10 +61,17 @@ const Hero: React.FC = () => {
           {/* Summary */}
           <p
             id="about"
-            className="text-zinc-600 text-base md:text-lg leading-relaxed mb-5 max-w-xl scroll-mt-20"
+            className="text-zinc-600 text-base md:text-lg leading-relaxed mb-4 max-w-xl scroll-mt-20"
           >
             {PERSONAL_INFO.summary}
           </p>
+
+          {/* Lead builder proof — first 10 seconds */}
+          {leadProof && (
+            <p className="text-sm font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2 mb-5 max-w-xl">
+              {leadProof}
+            </p>
+          )}
 
           {/* Availability + location strip */}
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-5 text-sm text-zinc-500">
@@ -86,8 +94,9 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-500 transition-colors shadow-md shadow-blue-600/20"
+              aria-label="Book a 20-minute call"
             >
-              <Calendar size={16} /> Book a Call
+              <Calendar size={16} aria-hidden /> Book a 20-min call
             </a>
             {resumeLink && (
               <a
@@ -114,11 +123,13 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Avatar with fallback */}
+        {/* Avatar with fallback — explicit dimensions to avoid CLS */}
         <div className="shrink-0 mx-auto md:mx-0">
           <img
             src={PERSONAL_INFO.avatar}
             alt={PERSONAL_INFO.name}
+            width={192}
+            height={192}
             className="w-40 h-40 md:w-48 md:h-48 rounded-2xl object-cover border-2 border-white shadow-lg ring-1 ring-zinc-100"
             onError={(e) => {
               const target = e.target as HTMLImageElement;

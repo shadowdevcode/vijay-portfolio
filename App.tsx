@@ -28,6 +28,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Blog from './components/Blog';
 import Education from './components/Education';
+import NowNext from './components/NowNext';
 import Footer from './components/Footer';
 import ContactCTA from './components/ContactCTA';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -98,6 +99,7 @@ const App: React.FC = () => {
           {/* ---- Above the fold ---- */}
           <Hero />
           <ProofOfImpact />
+          <NowNext />
 
           {/* ---- Proof of work (projects first = "show, don't tell") ---- */}
           <Projects />
