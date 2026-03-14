@@ -2,15 +2,16 @@
  * ContactCTA — Bottom-of-page Conversion Section
  * =================================================
  * Primary conversion point with email, LinkedIn,
- * call booking (Cal.com), and resume download CTAs.
+ * call booking (Cal.com), and resume view CTAs.
  */
 
 import React from 'react';
 import { PERSONAL_INFO, SOCIAL_LINKS, HIRE_INFO } from '../constants';
-import { ArrowRight, Mail, Linkedin, Calendar, FileDown } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin, Calendar } from 'lucide-react';
 
 const ContactCTA: React.FC = () => {
   const linkedIn = SOCIAL_LINKS.find((l) => l.name === 'LinkedIn');
+  const resumeLink = SOCIAL_LINKS.find((l) => l.name === 'Resume');
 
   return (
     <section className="py-12">
@@ -61,15 +62,18 @@ const ContactCTA: React.FC = () => {
             </a>
           )}
 
-          {/* Resume download */}
-          <a
-            href="/Vijay_Sehgal_Product_Manager.pdf"
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 text-white rounded-lg text-sm font-semibold hover:bg-zinc-700 transition-colors border border-zinc-700"
-          >
-            <FileDown size={16} />
-            Download Resume
-          </a>
+          {resumeLink && (
+            <a
+              href={resumeLink.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 text-white rounded-lg text-sm font-semibold hover:bg-zinc-700 transition-colors border border-zinc-700"
+            >
+              <resumeLink.icon size={16} />
+              View Resume
+              <ArrowRight size={14} />
+            </a>
+          )}
         </div>
       </div>
     </section>

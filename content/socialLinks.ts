@@ -16,6 +16,6 @@ export const SOCIAL_LINKS_RAW: SocialLinkRaw[] = [
   { name: 'GitHub', url: 'https://github.com/shadowdevcode' },
   {
     name: 'Resume',
-    url: 'https://docs.google.com/document/d/1N8BkbgLhFauwj2cCHxCQa6_ICtIetR-DxGcZ_eHxS-c/edit?tab=t.0#heading=h.9z02xaghie3r',
+    url: 'https://drive.google.com/file/d/1kfxj8gbG0_DjT9QentPzPlxgk3Ocmap6/view',
   },
 ];
