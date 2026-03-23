@@ -22,6 +22,20 @@ export const PROJECTS: Project[] = [
     link: 'https://vijaybsehgal.notion.site/WhatsApp-India-Smart-Muting-for-Business-Messages-Teardown-PRD-4113bc4217a34bbb865c4aaa4b7d84c9',
   },
   {
+    title: 'AI Product Operating System',
+    subtitle: 'Builder Infrastructure',
+    description:
+      '12-stage, 16-agent workflow so a solo PM can ship MVPs without an engineering team. 3 products in 7 days.',
+    tags: ['#AI Agents', '#Systems Thinking', '#Product Ops'],
+    metrics: ['3 Products Shipped', '0 Engineers'],
+    highlights: [
+      'Postmortem-to-learning loop; each build improves the next',
+    ],
+    caseStudyAvailable: true,
+    segment: 'AI',
+    link: 'https://www.notion.so/vijaybsehgal/AI-Product-Operating-System-Shipping-MVPs-Without-an-Engineering-Team-31ef8aca882d808d9a77f2d424006b9e?source=copy_link',
+  },
+  {
     title: 'GitHub-for-PMs Agent',
     subtitle: 'Builder Tool',
     description:
@@ -36,6 +50,22 @@ export const PROJECTS: Project[] = [
     link: 'https://www.notion.so/vijaybsehgal/AI-PM-Portfolio-Generator-GitHub-for-PMs-26bf8aca882d80d4bcb1d31495dd4372?source=copy_link',
   },
   {
+    title: 'Rasoi Planner',
+    subtitle: 'Personal Product · Built & Shipped',
+    description:
+      'Household kitchen coordination app for Indian homes — owners plan meals, cooks track pantry in real time, and an AI assistant handles inventory updates in Hindi and English. Shipped solo from idea to live product.',
+    tags: ['#0-to-1', '#Consumer', '#AI Integration', '#Firebase', '#React'],
+    metrics: ['Live Product', 'Dual-Role UX', 'Hindi + English AI'],
+    highlights: [
+      'Gemini-powered natural language pantry updates — cooks just describe what ran out',
+      'Role-based access: Owner plans meals, Cook manages inventory with distinct permissions',
+      'Real-time sync via Firestore; deployed on Vercel',
+    ],
+    caseStudyAvailable: false,
+    segment: 'Consumer',
+    link: 'https://github.com/shadowdevcode/Rasoi-Planner',
+  },
+  {
     title: 'Blinkit (QComm)',
     subtitle: 'Product Teardown',
     description:
@@ -48,20 +78,6 @@ export const PROJECTS: Project[] = [
     caseStudyAvailable: true,
     segment: 'Quick Commerce',
     link: 'https://www.notion.so/vijaybsehgal/Product-Sense-Blinkit-Smart-Cart-Reducing-Reorder-Time-by-95-4m-10s-25af8aca882d81bc8c91eb7856407f87?source=copy_link',
-  },
-  {
-    title: 'AI Product Operating System',
-    subtitle: 'Builder Infrastructure',
-    description:
-      '12-stage, 16-agent workflow so a solo PM can ship MVPs without an engineering team. 3 products in 7 days.',
-    tags: ['#AI Agents', '#Systems Thinking', '#Product Ops'],
-    metrics: ['3 Products Shipped', '0 Engineers'],
-    highlights: [
-      'Postmortem-to-learning loop; each build improves the next',
-    ],
-    caseStudyAvailable: true,
-    segment: 'AI',
-    link: 'https://www.notion.so/vijaybsehgal/AI-Product-Operating-System-Shipping-MVPs-Without-an-Engineering-Team-31ef8aca882d808d9a77f2d424006b9e?source=copy_link',
   },
   {
     title: 'Swish Quick-Commerce',
@@ -91,5 +107,19 @@ export const PROJECTS: Project[] = [
     caseStudyAvailable: true,
     segment: 'HealthTech',
     link: 'https://vijaybsehgal.notion.site/The-Digital-Health-Coach-145c0cb389634f28bf18242bad389dc3',
+  },
+  {
+    title: 'PM DEX',
+    subtitle: 'AI-Native PM Operating System',
+    description:
+      'Terminal-first career OS for PMs: persistent markdown memory, 13 slash commands, 8 mentor personas, multi-model routing (Sonnet/Opus/Haiku/Perplexity), and a self-improvement loop. Built and used daily.',
+    tags: ['#AI Agents', '#Systems Design', '#PM Tooling'],
+    metrics: ['13 Commands', '8 Mentor Personas', 'Daily Active Use'],
+    highlights: [
+      'Compounding memory: every session updates career context, pipeline, and interview feedback',
+    ],
+    caseStudyAvailable: false,
+    segment: 'AI',
+    link: 'https://www.notion.so/vijaybsehgal/AI-Product-Operating-System-Shipping-MVPs-Without-an-Engineering-Team-31ef8aca882d808d9a77f2d424006b9e?source=copy_link',
   },
 ];

@@ -59,7 +59,9 @@ const Blog: React.FC = () => {
           <div className="h-1 w-16 bg-zinc-900"></div>
         </div>
         <a
-          href="#"
+          href="https://vijaybsehgal.notion.site/Vijay-s-Product-Work-25af8aca882d80bba710ec33c119b28e"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-sm font-bold text-zinc-900 hover:text-blue-600 flex items-center gap-2 transition-colors group"
         >
           READ ALL POSTS{' '}
