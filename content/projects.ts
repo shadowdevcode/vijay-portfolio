@@ -25,11 +25,11 @@ export const PROJECTS: Project[] = [
     title: 'AI Product Operating System',
     subtitle: 'Builder Infrastructure',
     description:
-      '12-stage, 16-agent workflow so a solo PM can ship MVPs without an engineering team. 3 products in 7 days.',
+      'Built a personal workflow so I can take a product idea to a live MVP without needing an engineering team. Useful for running quick experiments at early-stage startups where eng bandwidth is the bottleneck.',
     tags: ['#AI Agents', '#Systems Thinking', '#Product Ops'],
     metrics: ['3 Products Shipped', '0 Engineers'],
     highlights: [
-      'Postmortem-to-learning loop; each build improves the next',
+      'Each build feeds back into the next — postmortems update the system, not just a doc',
     ],
     caseStudyAvailable: true,
     segment: 'AI',
@@ -39,11 +39,11 @@ export const PROJECTS: Project[] = [
     title: 'GitHub-for-PMs Agent',
     subtitle: 'Builder Tool',
     description:
-      'AI agent that turns case studies into portfolio cards. ~90% faster portfolio creation; 78% activation (vs 42% benchmark) in 2 weeks.',
+      'An AI agent that reads a PM case study and spits out a clean portfolio card. Built it because turning good work into visible work was taking too long.',
     tags: ['#AI Agent', '#Prototype', '#PromptChaining'],
     metrics: ['78% Activation', '~90% Time Reduction'],
     highlights: [
-      'Prompt-chained pipeline: case study → summary → portfolio card',
+      '78% activation in 2 weeks vs 42% benchmark — PMs actually used it',
     ],
     caseStudyAvailable: true,
     segment: 'AI',
@@ -53,13 +53,12 @@ export const PROJECTS: Project[] = [
     title: 'Rasoi Planner',
     subtitle: 'Personal Product · Built & Shipped',
     description:
-      'Household kitchen coordination app for Indian homes — owners plan meals, cooks track pantry in real time, and an AI assistant handles inventory updates in Hindi and English. Shipped solo from idea to live product.',
+      'Kitchen coordination app for Indian homes. The cook can tell the AI what ran out in Hindi or English, and the owner sees the pantry update in real time. Built and shipped solo because I wanted to solve a problem I actually had.',
     tags: ['#0-to-1', '#Consumer', '#AI Integration', '#Firebase', '#React'],
     metrics: ['Live Product', 'Dual-Role UX', 'Hindi + English AI'],
     highlights: [
-      'Gemini-powered natural language pantry updates — cooks just describe what ran out',
-      'Role-based access: Owner plans meals, Cook manages inventory with distinct permissions',
-      'Real-time sync via Firestore; deployed on Vercel',
+      'Two separate roles with different views and permissions — owner plans meals, cook manages stock',
+      'Natural language updates via Gemini so the cook never has to navigate a form',
     ],
     caseStudyAvailable: false,
     segment: 'Consumer',
@@ -112,11 +111,11 @@ export const PROJECTS: Project[] = [
     title: 'PM DEX',
     subtitle: 'AI-Native PM Operating System',
     description:
-      'Terminal-first career OS for PMs: persistent markdown memory, 13 slash commands, 8 mentor personas, multi-model routing (Sonnet/Opus/Haiku/Perplexity), and a self-improvement loop. Built and used daily.',
+      'A tool I built to run my own job search the way I\'d run a product sprint. It remembers context across sessions, so every interview, every rejection, every insight compounds instead of getting lost in a notes app.',
     tags: ['#AI Agents', '#Systems Design', '#PM Tooling'],
-    metrics: ['13 Commands', '8 Mentor Personas', 'Daily Active Use'],
+    metrics: ['Daily Active Use', 'Self-improving', 'Built for real use'],
     highlights: [
-      'Compounding memory: every session updates career context, pipeline, and interview feedback',
+      'Memory that compounds: each session updates pipeline, interview feedback, and what to do next',
     ],
     caseStudyAvailable: false,
     segment: 'AI',
