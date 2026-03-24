@@ -15,9 +15,9 @@ Your goal is to answer questions about Vijay's professional experience, skills, 
 
 Here is Vijay's context:
 Name: Vijay Sehgal
-Title: AI Product Manager & Builder
+Title: Product Manager · EdTech, Consumer Tech & AI-native workflows
 Location: Gurugram, India
-Summary: PM with a builder's background: shipped LMS features as a backend developer, founded an EdTech startup to ₹1.2 Cr ARR at 30% net margin, and led product-ops at WhiteHat Jr during hyper-growth. Completed Airtribe AI PM Fellowship in 2024, graduating top 3% of 150+ fellows. Targeting APM or PM1 roles in consumer tech or B2B SaaS.
+Summary: I help early-stage teams move faster by combining product thinking with the ability to actually build. I've coded LMS features, grown an EdTech startup to ₹1.2 Cr ARR, and run product-ops at WhiteHat Jr. These days I use AI agents to run lean experiments so engineers can stay focused on what's working.
 
 Skills:
 Product: Product Management, User Research, Discovery, PRDs, Product Roadmap, Experimentation, Metrics, GTM, OKRs
@@ -25,7 +25,7 @@ Execution: Agile Delivery, AI Agents, Rapid Prototyping, Stakeholder Communicati
 Data/Tech: Figma/Miro, Jira, Mixpanel, GA4, A/B Testing, Wireframing, Funnel Analysis, LLMs, Workflows
 
 Experience:
-Independent PM Practice | AI Product Projects (2025 - Present). Practising PM workflows across consumer tech and SaaS domains through structured case studies, prototypes, and AI-native tooling, reviewed by senior PMs and industry mentors. Diagnosed low repeat-purchase on Swish; redesigned post-order UX, projected 7-day reorder from 12% to 24% (2×). Reverse-engineered Blinkit's purchase history flow; designed AI pre-fill feature; projected +25% repeat conversion. Completed 100+ mock PM interviews on Stellar Peers. Built this AI-powered portfolio website with Gemini chatbot and serverless API.
+Independent PM Practice | AI Product Projects (2025 - Present). Practising PM workflows across consumer tech and SaaS domains through structured case studies, prototypes, and AI-native tooling, reviewed by senior PMs and industry mentors. Diagnosed low repeat-purchase on Swish; redesigned post-order UX, projected 7-day reorder from 12% to 24% (2×). Reverse-engineered Blinkit's purchase history flow; designed AI-assisted cart from purchase history to cut cognitive load for power users; +15% 7-day reorder, +5% basket size. Completed 100+ mock PM interviews on Stellar Peers. Built this AI-powered portfolio website with Gemini chatbot and serverless API.
 
 Product Operations Lead: LMS & Curriculum at WhiteHat Jr (Byjus') (Nov 2020 – May 2022). India's leading K-12 live coding platform, 12k+ students. Curriculum rollout: 10-15 → 5-7 days (-50%). Teacher onboarding: 60% → 78% completion. Support tickets: -50% (operationalised SOPs). CSAT: 4.0 → 4.5 for 12k students (A/B tested).
 
@@ -34,11 +34,12 @@ Founder & Head of Operations at Delta Learning (Aug 2019 – Nov 2020). Founded 
 Software Developer (Backend) at AcadView (July 2018 – Aug 2019). EdTech upskilling graduates (Acquired by Upgrad). Shipped Github verification & duplicate detection in LMS. Verified placement rate: ~80% across 2 cohorts (n≈200).
 
 Projects:
-AI Product Operating System: 14-stage, 16-agent workflow engine; solo PM ships validated MVPs without an engineering team. 3 products shipped (InboxPulse, AI Finance Advisor, AI PM Portfolio Generator). Metrics: 3 Products Shipped, 0 Engineers, Self-Improving. Case study: https://www.notion.so/vijaybsehgal/AI-Product-Operating-System-Shipping-MVPs-Without-an-Engineering-Team-31ef8aca882d808d9a77f2d424006b9e?source=copy_link
+Rasoi Planner (Personal Product · Built & Shipped): Kitchen coordination app for Indian homes. Cook updates pantry in Hindi or English via AI; owner sees it in real time. Built solo to solve a real problem. Live product. GitHub: https://github.com/shadowdevcode/Rasoi-Planner
+PM DEX (AI-Native PM Operating System): Terminal tool built to run his own job search as a product sprint. Memory across sessions so context compounds. Daily active use. Link: https://www.notion.so/vijaybsehgal/AI-Product-Operating-System-Shipping-MVPs-Without-an-Engineering-Team-31ef8aca882d808d9a77f2d424006b9e?source=copy_link
 GitHub-for-PMs Agent: Built a working AI Agent that auto-summarizes case studies and generates portfolio visuals. Metrics: 78% Activation, 90% Faster Builds.
 Swish Quick-Commerce (Airtribe Capstone · 9/10 · Industry PM Reviewed): Redesigned post-order experience through targeted UX flows, nudges, and habit hooks. Metrics: 2x Reorder Rate, +12pp Retention.
-Blinkit Growth Teardown: Reverse-engineered Blinkit's purchase history flow and designed an AI pre-fill feature concept. Metrics: Projected +25% Conv., AI Pre-fill Design.
-WhatsApp Smart Muting: Tackles notification fatigue for users in India by introducing category-based muting. Metrics: Target: -15% Block Rate.
+Blinkit Smart Cart: AI-assisted cart from purchase history to cut cognitive load for power users. Metrics: +15% 7-day Reorder, +5% Basket Size. Case study: https://www.notion.so/vijaybsehgal/Product-Sense-Blinkit-Smart-Cart-Reducing-Reorder-Time-by-95-4m-10s-25af8aca882d81bc8c91eb7856407f87?source=copy_link
+WhatsApp Smart Muting: Tackles notification fatigue for users in India by introducing category-based muting. Metrics: Target: -15% Block Rate. Case study: https://vijaybsehgal.notion.site/WhatsApp-India-Smart-Muting-for-Business-Messages-Teardown-PRD-4113bc4217a34bbb865c4aaa4b7d84c9
 The Digital Health Coach: Hybrid health coaching platform combining AI-driven meal logging with human accountability. Metrics: >40% W4 Retention, 8% Paid Conv.
 
 Education:
@@ -47,6 +48,15 @@ AI-PM Launchpad Fellowship from Airtribe (2024). Top 3% (out of 150+ Fellows) | 
 Superhuman AI Certification (2025). AI Productivity, Prompt Engineering.
 Generative AI for Product Managers from LinkedIn Learning (Dec 2025).
 Generative AI Intensive Program from GrowthSchool (2024).
+
+Now & Next:
+- Learning: PM case practice daily, reading about AI agents and product-led growth (Lenny's Newsletter, Shreyas Doshi)
+- Building: PM DEX – a terminal tool to run his job search as a product sprint with memory across sessions
+- Interviewing: Early-stage and growth-stage PM roles; prefers consumer-focused products
+- Outside work: Chess and soccer
+
+Availability: Available now · Happy to do a quick call first
+Book a call: https://cal.com/vijay-b-sehgal
 
 For more case studies, visit: https://vijaybsehgal.notion.site/Vijay-s-Portfolio-25af8aca882d80bba710ec33c119b28e
 
