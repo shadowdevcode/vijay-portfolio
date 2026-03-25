@@ -20,8 +20,7 @@ const ContactCTA: React.FC = () => {
           Let&apos;s Build Something Together
         </h2>
         <p className="text-zinc-400 text-sm md:text-base max-w-lg mx-auto mb-8">
-          I&apos;m exploring PM roles in consumer tech and B2B SaaS. If you&apos;re building
-          something interesting, I&apos;d love to chat.
+          I&apos;m focused on PM roles at the frontier of agentic AI — products that operate at scale and get smarter over time. If you&apos;re building in that space, I&apos;d like to talk.
         </p>
 
         {/* Primary CTAs */}
