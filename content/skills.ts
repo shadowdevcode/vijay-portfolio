@@ -30,4 +30,9 @@ export const SKILLS: Skill[] = [
   { name: 'Funnel Analysis', category: 'Data/Tech', featured: true },
   { name: 'LLMs', category: 'Data/Tech', featured: true },
   { name: 'Workflows', category: 'Data/Tech' },
+  { name: 'Agentic AI', category: 'Data/Tech', featured: true },
+  { name: 'Multi-agent Systems', category: 'Data/Tech', featured: true },
+  { name: 'LLM Product Development', category: 'Data/Tech', featured: true },
+  { name: 'Prompt Engineering', category: 'Data/Tech', featured: true },
+  { name: 'AI Workflow Automation', category: 'Execution', featured: true },
 ];

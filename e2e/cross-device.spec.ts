@@ -9,7 +9,7 @@ test.describe('Portfolio — cross-device (mobile, tablet, desktop)', () => {
 
   test('shows lead builder proof in first view', async ({ page }) => {
     await page.goto('/');
-    await expect(page.getByText(/3 products in 7 days|AI Product OS|no engineering team/i)).toBeVisible();
+    await expect(page.getByText(/3 products in 7 days|AI Product OS|no engineering team/i).first()).toBeVisible();
   });
 
   test('primary CTA "Book a 20-min call" is visible and clickable', async ({ page }) => {
@@ -52,7 +52,7 @@ test.describe('Portfolio — cross-device (mobile, tablet, desktop)', () => {
     await page.goto('/');
     await page.getByText(/Let's Build Something Together/i).scrollIntoViewIfNeeded();
     await expect(page.getByRole('link', { name: /Book a 20-min Call/i })).toBeVisible();
-    await expect(page.getByRole('link', { name: /Download Resume|View Resume/i })).toBeVisible();
+    await expect(page.getByRole('link', { name: /Download Resume|View Resume/i }).first()).toBeVisible();
   });
 
   test('no horizontal overflow on mobile viewport', async ({ page }) => {

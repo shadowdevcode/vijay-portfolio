@@ -11,8 +11,9 @@ export const PERSONAL_INFO = {
   email: 'vijay.b.sehgal@gmail.com',
   phone: '+91-6362057001',
   summary:
-    "I help early-stage teams move faster by combining product thinking with the ability to actually build. I've coded LMS features, grown an EdTech startup to ₹1.2 Cr ARR, and run product-ops at WhiteHat Jr. These days I use AI agents to run lean experiments so engineers can stay focused on what's working.",
+    "Product Manager with 5 years of experience building AI-native products from 0 to 1. I shipped a fully agentic product OS that replaces a 5-person team with a 16-agent system. I build with engineers, not instead of them — and I use that technical fluency to move product faster.",
   /** Lead proof for first 10 seconds — "this person ships" */
-  leadBuilderProof: 'Shipped 3 products in 7 days. Solo. No engineering team.',
+  leadBuilderProof:
+    'Designed and shipped a 16-agent AI Product OS. Each build compounds — postmortems feed back into the system so the next product is faster and more reliable.',
   avatar: '/Gemini-headshot.png',
 };
