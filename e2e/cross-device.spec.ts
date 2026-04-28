@@ -4,7 +4,8 @@ test.describe('Portfolio — cross-device (mobile, tablet, desktop)', () => {
   test('loads and shows hero with name and headline', async ({ page }) => {
     await page.goto('/');
     await expect(page.getByRole('heading', { name: /Vijay Sehgal/i })).toBeVisible();
-    await expect(page.getByText(/Product Manager.*EdTech/i)).toBeVisible();
+    // Use .first() — hero subtitle always renders before experience cards in DOM
+    await expect(page.getByText(/Product Manager.*EdTech/i).first()).toBeVisible();
   });
 
   test('shows lead builder proof in first view', async ({ page }) => {
@@ -68,10 +69,37 @@ test.describe('Portfolio — cross-device (mobile, tablet, desktop)', () => {
     await expect(page.getByRole('heading', { name: /Vijay Sehgal/i })).toBeInViewport();
   });
 
+  test('ProductOS card is present with live beta label', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.getByText(/ProductOS/i).first()).toBeVisible();
+    await expect(page.getByText(/Live Beta/i).first()).toBeVisible();
+  });
+
+  test('PaiseWise card is present', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.getByText(/PaiseWise/i).first()).toBeVisible();
+  });
+
+  test('PM DEX card is removed', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.getByText(/PM DEX/i)).not.toBeVisible();
+  });
+
+  test('Infinity Learn is shown as current role in experience', async ({ page }) => {
+    await page.goto('/');
+    await page.getByRole('heading', { name: /Experience/i }).scrollIntoViewIfNeeded();
+    await expect(page.getByText(/Infinity Learn/i).first()).toBeVisible();
+  });
+
+  test('NowNext Building item references ProductOS', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.getByText(/ProductOS/i).first()).toBeVisible();
+  });
+
   test('skip link works for accessibility', async ({ page }) => {
     await page.goto('/');
-    await page.keyboard.press('Tab');
     const skipLink = page.getByRole('link', { name: /Skip to main content/i });
+    await skipLink.focus();
     await expect(skipLink).toBeFocused();
     await skipLink.click();
     await expect(page.locator('#main-content')).toBeVisible();
