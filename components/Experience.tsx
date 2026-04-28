@@ -134,6 +134,21 @@ const Experience: React.FC = () => {
                 </p>
               )}
 
+              {/* Achievements — standout wins beyond day-to-day impact */}
+              {job.achievements && job.achievements.length > 0 && (
+                <div className="mt-3 pl-0 md:pl-[60px]">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5">Achievements</p>
+                  <ul className="space-y-1">
+                    {job.achievements.map((achievement, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-zinc-600 leading-relaxed">
+                        <span className="text-amber-500 mt-1 shrink-0">★</span>
+                        <span>{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               {/* Optional external link (e.g. Notion portfolio) */}
               {job.link && (
                 <a

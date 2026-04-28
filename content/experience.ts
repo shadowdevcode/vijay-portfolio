@@ -17,7 +17,7 @@ export const EXPERIENCE: Job[] = [
     featured: true,
     badges: ['AI Innovation', 'EdTech', 'Full Circle'],
     context:
-      'AI Innovation Labs at Infinity Learn — building Full Circle, an AI-native product initiative inside one of India\'s leading K-12 EdTech platforms.',
+      'Leading product for Full Circle inside Infinity Learn\'s AI Innovation Labs — defining scope, running user research, and shaping how AI earns its place in a student\'s workflow.',
     impactBullets: [
       'Early-stage: defining product scope, user research, and AI integration strategy for Full Circle',
     ],
@@ -33,7 +33,7 @@ export const EXPERIENCE: Job[] = [
     featured: false,
     badges: ['Industry Case Studies', 'AI Agents', 'Teardowns', 'Portfolio'],
     context:
-      'Solo PM shipping products via a 12-stage AI Product OS; equivalent to 5 people, 3 months, ₹30–50L — actual: one PM, ₹5k API spend.',
+      'Ran my own PM practice: shipped 3 products in 7 days using a self-built 16-agent AI OS — what would cost ₹30–50L and 3 months with a team cost ₹5k and one sprint.',
     impactBullets: [
       'Shipped 3 products in 7 days (AI Product OS); no engineering team',
       'Built this portfolio with Gemini chatbot, serverless API, recruiter-first UX',
@@ -48,7 +48,7 @@ export const EXPERIENCE: Job[] = [
     location: 'Mumbai',
     type: 'Hybrid',
     logo: 'whitehat',
-    context: "India's leading K-12 live coding platform — ~150k students",
+    context: "Owned the LMS and curriculum product at India's leading K-12 live coding platform (~150k students) during a hyper-growth phase.",
     impactBullets: [
       'Curriculum rollout: 10–15 → 5–7 days (−50%)',
       'Teacher onboarding: 60% → 78% completion',
@@ -63,7 +63,7 @@ export const EXPERIENCE: Job[] = [
     location: 'Haryana',
     type: 'Hybrid',
     logo: 'delta',
-    context: 'Founded offline EdTech, 600+ students, project-based upskilling',
+    context: 'Founded and built an offline EdTech startup from zero — reached 600+ students with project-based upskilling and ran it to ₹1.2 Cr ARR.',
     impactBullets: [
       '₹1.2 Cr ARR, ~30% net margin',
       'Completion ~80% vs ~60% benchmark',
@@ -77,7 +77,7 @@ export const EXPERIENCE: Job[] = [
     location: 'Gurugram',
     type: 'On Site',
     logo: 'acadview',
-    context: 'EdTech upskilling (Acquired by Upgrad)',
+    context: 'Backend developer at an EdTech upskilling platform (later acquired by Upgrad) — built core LMS features that went live for 200+ students.',
     impactBullets: [
       'CSAT ~25%; placement-ready ~80% across 2 cohorts (n≈250)',
     ],

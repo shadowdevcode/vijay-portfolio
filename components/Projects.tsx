@@ -153,12 +153,12 @@ const Projects: React.FC = () => {
                 </span>
               ))}
 
-              {project.caseStudyAvailable && project.link && project.link !== '#' && (
+              {project.link && project.link !== '#' && (
                 <div className="ml-auto flex items-center gap-1 text-xs font-medium text-zinc-400 group-hover:text-blue-600 transition-colors">
-                  Read Case Study <ArrowUpRight size={12} />
+                  {project.caseStudyAvailable ? 'Read Case Study' : 'View Project'} <ArrowUpRight size={12} />
                 </div>
               )}
-              {project.caseStudyAvailable && (!project.link || project.link === '#') && (
+              {(!project.link || project.link === '#') && project.caseStudyAvailable && (
                 <div className="ml-auto text-[10px] font-bold uppercase tracking-wider text-zinc-300">
                   Coming Soon
                 </div>

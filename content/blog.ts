@@ -14,6 +14,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '12 min',
     tags: ['AI', 'Product Ops', 'Systems Thinking'],
     source: 'blog',
+    featured: true,
     link: 'https://www.notion.so/vijaybsehgal/AI-Product-Operating-System-Shipping-MVPs-Without-an-Engineering-Team-31ef8aca882d808d9a77f2d424006b9e?source=copy_link',
   },
   {

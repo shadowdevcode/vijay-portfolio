@@ -72,17 +72,22 @@ const Blog: React.FC = () => {
       <div className="grid gap-5">
         {BLOG_POSTS.map((post, index) => {
           const isExternal = post.link && post.link !== '#';
+          const isFeatured = post.featured === true;
           return (
             <a
               key={index}
               href={post.link || '#'}
               target={isExternal ? '_blank' : '_self'}
               rel="noopener noreferrer"
-              className="group flex bg-white border border-zinc-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-zinc-300 transition-all duration-300 cursor-pointer"
+              className={`group flex bg-white rounded-xl overflow-hidden transition-all duration-300 cursor-pointer ${
+                isFeatured
+                  ? 'border-2 border-blue-200 hover:shadow-xl hover:border-blue-400 shadow-sm'
+                  : 'border border-zinc-200 hover:shadow-lg hover:border-zinc-300'
+              }`}
             >
               {/* Number indicator */}
-              <div className="hidden sm:flex shrink-0 w-16 items-center justify-center bg-zinc-50 border-r border-zinc-100">
-                <span className="text-2xl font-bold text-zinc-200 font-serif">
+              <div className={`hidden sm:flex shrink-0 w-16 items-center justify-center border-r ${isFeatured ? 'bg-blue-50 border-blue-100' : 'bg-zinc-50 border-zinc-100'}`}>
+                <span className={`text-2xl font-bold font-serif ${isFeatured ? 'text-blue-200' : 'text-zinc-200'}`}>
                   {String(index + 1).padStart(2, '0')}
                 </span>
               </div>
@@ -111,9 +116,16 @@ const Blog: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-zinc-900 mb-2 group-hover:text-blue-600 transition-colors font-serif">
-                  {post.title}
-                </h3>
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <h3 className="text-lg font-bold text-zinc-900 group-hover:text-blue-600 transition-colors font-serif">
+                    {post.title}
+                  </h3>
+                  {isFeatured && (
+                    <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 border border-blue-200">
+                      Featured
+                    </span>
+                  )}
+                </div>
                 <p className="text-zinc-500 text-sm leading-relaxed mb-3">{post.excerpt}</p>
 
                 {/* Source-specific CTA */}

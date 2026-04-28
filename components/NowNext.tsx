@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { NOW_NEXT } from '../constants';
-import { BookOpen, Hammer, Compass, Rocket } from 'lucide-react';
+import { BookOpen, Hammer, Compass, Rocket, Briefcase, Coffee } from 'lucide-react';
 import type { NowNextItem } from '../types';
 
 const categoryConfig: Record<NowNextItem['category'], { icon: React.ReactNode; color: string }> = {
@@ -19,6 +19,8 @@ const categoryConfig: Record<NowNextItem['category'], { icon: React.ReactNode; c
     color: 'bg-emerald-50 text-emerald-700 border-emerald-200',
   },
   Exploring: { icon: <Compass size={14} />, color: 'bg-amber-50 text-amber-700 border-amber-200' },
+  'At Work': { icon: <Briefcase size={14} />, color: 'bg-green-50 text-green-700 border-green-200' },
+  'Outside work': { icon: <Coffee size={14} />, color: 'bg-rose-50 text-rose-700 border-rose-200' },
 };
 
 const NowNext: React.FC = () => {

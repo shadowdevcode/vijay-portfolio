@@ -66,12 +66,17 @@ const ProofOfImpact: React.FC = () => {
               </span>
             </div>
 
-            {/* One-line baseline → result (action omitted for scannability) */}
+            {/* One-line baseline → result */}
             <div className="flex items-center gap-2 text-xs flex-wrap">
               <span className="text-zinc-500 break-words">{metric.baseline}</span>
               <ArrowRight size={10} className="text-zinc-300 shrink-0" />
               <span className="font-bold text-emerald-700 break-words">{metric.result}</span>
             </div>
+
+            {/* Action mechanism — result with cause = evidence */}
+            {metric.action && (
+              <p className="text-[11px] text-zinc-400 mt-1.5 italic">via {metric.action}</p>
+            )}
 
             {/* Source */}
             <div className="mt-2 pt-2 border-t border-zinc-50">

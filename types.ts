@@ -117,7 +117,7 @@ export interface ImpactMetric {
 // ---- Now / Next (new) ----
 export interface NowNextItem {
   /** Category label */
-  category: 'Learning' | 'Building' | 'Shipping' | 'Exploring';
+  category: 'Learning' | 'Building' | 'Shipping' | 'Exploring' | 'At Work' | 'Outside work';
   /** What you're doing */
   text: string;
 }
