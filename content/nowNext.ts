@@ -6,8 +6,8 @@
 import type { NowNextItem } from '../types';
 
 export const NOW_NEXT: NowNextItem[] = [
-  { category: 'Learning', text: 'Doing PM case practice daily and reading about AI agents and product-led growth. Lenny\'s Newsletter, Shreyas Doshi threads, and whatever Swiggy or Zepto ships next.' },
-  { category: 'Building', text: 'PM DEX, a terminal-based tool I built to run my own job search as a product sprint. It has memory across sessions so I\'m not starting from scratch every day.' },
-  { category: 'Interviewing', text: 'Focused on PM roles at the frontier of agentic AI. Looking for teams where experimentation speed and customer proximity are competitive advantages.' },
+  { category: 'At Work', text: 'PM at Infinity Learn\'s AI Innovation Labs — building Full Circle, an AI-native EdTech initiative. Early days: user research, scope definition, and figuring out where AI actually earns its place in a student\'s workflow.' },
+  { category: 'Building', text: 'ProductOS — merging the Research pipeline into the live MacOS desktop app at beta.productos.dev. Goal: a PM asks one messy question and gets a cited decision brief in ~10 minutes, fully inside the desktop app.' },
+  { category: 'Learning', text: 'Reading about AI agents and product-led growth. Lenny\'s Newsletter, Shreyas Doshi threads, and whatever Swiggy or Zepto ships next.' },
   { category: 'Outside work', text: 'Playing chess when I need to slow down and think, soccer when I need to stop thinking. Both help.' },
 ];

@@ -1,20 +1,36 @@
 /**
  * Work experience — job timeline
  * Used by Experience section
- * Last synced with resume: 2025-03
+ * Last synced with resume: 2026-04-29
  */
 
 import type { Job } from '../types';
 
 export const EXPERIENCE: Job[] = [
   {
+    company: 'Infinity Learn',
+    role: 'Product Manager — AI Innovation Labs',
+    period: 'Apr 2026 – Present',
+    location: 'Gurugram',
+    type: 'Hybrid',
+    logo: 'stealth',
+    featured: true,
+    badges: ['AI Innovation', 'EdTech', 'Full Circle'],
+    context:
+      'AI Innovation Labs at Infinity Learn — building Full Circle, an AI-native product initiative inside one of India\'s leading K-12 EdTech platforms.',
+    impactBullets: [
+      'Early-stage: defining product scope, user research, and AI integration strategy for Full Circle',
+    ],
+    achievements: [],
+  },
+  {
     company: 'Independent PM Practice',
     role: 'Product Strategy, Prototyping & AI Workflows',
-    period: '2025 - Present',
+    period: '2025 – Apr 2026',
     location: 'Remote',
     type: 'Remote',
     logo: 'stealth',
-    featured: true,
+    featured: false,
     badges: ['Industry Case Studies', 'AI Agents', 'Teardowns', 'Portfolio'],
     context:
       'Solo PM shipping products via a 12-stage AI Product OS; equivalent to 5 people, 3 months, ₹30–50L — actual: one PM, ₹5k API spend.',

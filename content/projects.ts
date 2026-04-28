@@ -1,7 +1,7 @@
 /**
  * Projects / case studies (hero 3: WhatsApp, GitHub-for-PMs, Blinkit first)
  * Used by Projects section
- * Last synced with resume: 2025-03
+ * Last synced with resume: 2026-04-29
  */
 
 import type { Project } from '../types';
@@ -22,18 +22,18 @@ export const PROJECTS: Project[] = [
     link: 'https://vijaybsehgal.notion.site/WhatsApp-India-Smart-Muting-for-Business-Messages-Teardown-PRD-4113bc4217a34bbb865c4aaa4b7d84c9',
   },
   {
-    title: 'AI Product Operating System',
-    subtitle: 'Builder Infrastructure',
+    title: 'ProductOS',
+    subtitle: 'Live Beta · MacOS Desktop App',
     description:
-      'Built a personal workflow so I can take a product idea to a live MVP without needing an engineering team. Useful for running quick experiments at early-stage startups where eng bandwidth is the bottleneck.',
-    tags: ['#AI Agents', '#Systems Thinking', '#Product Ops'],
-    metrics: ['3 Products Shipped', '0 Engineers'],
+      'PM decision operating system. Ask one messy product question; get a cited decision brief in ~10 minutes. Multi-agent pipeline — planner classifies intent, parallel workers collect evidence across App Store, G2, Reddit, HN, and more, synthesizer builds the artifact. Live MacOS desktop app with active beta users.',
+    tags: ['#Multi-agent', '#PM Tooling', '#0-to-1'],
+    metrics: ['Live Beta', 'Beta Users Active', '~10 min to Decision Brief'],
     highlights: [
-      'Each build feeds back into the next — postmortems update the system, not just a doc',
+      'Full lifecycle: Question → Clarify → Plan → Collect → Findings → Report → Decision Artifact',
     ],
-    caseStudyAvailable: true,
+    caseStudyAvailable: false,
     segment: 'AI',
-    link: 'https://www.notion.so/vijaybsehgal/AI-Product-Operating-System-Shipping-MVPs-Without-an-Engineering-Team-31ef8aca882d808d9a77f2d424006b9e?source=copy_link',
+    link: 'https://productos.dev',
   },
   {
     title: 'GitHub-for-PMs Agent',
@@ -63,6 +63,21 @@ export const PROJECTS: Project[] = [
     caseStudyAvailable: false,
     segment: 'Consumer',
     link: 'https://github.com/shadowdevcode/Rasoi-Planner',
+  },
+  {
+    title: 'PaiseWise',
+    subtitle: 'Personal Finance Tracker · Built Solo',
+    description:
+      'Built to solve my own problem: Gmail receipts scattered, no consolidated spending view. Auto-imports UPI, credit card, debit, and net banking alerts from 20+ Indian bank email formats; categorizes into 17 spend buckets. AI advisor "Artha" answers natural-language questions like "Where am I wasting money?"',
+    tags: ['#0-to-1', '#AI Integration', '#FullStack', '#Gmail OAuth'],
+    metrics: ['20+ Bank Formats', 'AI Advisor "Artha"', 'Live on Vercel'],
+    highlights: [
+      'Parsed 20+ Indian bank email formats from scratch — no SDK, pure regex + LLM classification',
+      'Artha AI advisor has full transaction context — answers natural-language finance questions',
+    ],
+    caseStudyAvailable: false,
+    segment: 'AI',
+    link: 'https://github.com/shadowdevcode/paisewise',
   },
   {
     title: 'Blinkit (QComm)',
@@ -106,19 +121,5 @@ export const PROJECTS: Project[] = [
     caseStudyAvailable: true,
     segment: 'HealthTech',
     link: 'https://vijaybsehgal.notion.site/The-Digital-Health-Coach-145c0cb389634f28bf18242bad389dc3',
-  },
-  {
-    title: 'PM DEX',
-    subtitle: 'AI-Native PM Operating System',
-    description:
-      'A tool I built to run my own job search the way I\'d run a product sprint. It remembers context across sessions, so every interview, every rejection, every insight compounds instead of getting lost in a notes app.',
-    tags: ['#AI Agents', '#Systems Design', '#PM Tooling'],
-    metrics: ['Daily Active Use', 'Self-improving', 'Built for real use'],
-    highlights: [
-      'Memory that compounds: each session updates pipeline, interview feedback, and what to do next',
-    ],
-    caseStudyAvailable: false,
-    segment: 'AI',
-    link: 'https://www.notion.so/vijaybsehgal/AI-Product-Operating-System-Shipping-MVPs-Without-an-Engineering-Team-31ef8aca882d808d9a77f2d424006b9e?source=copy_link',
   },
 ];
