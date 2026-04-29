@@ -21,7 +21,7 @@
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenAI } from '@google/genai';
-import { SYSTEM_PROMPT } from './system-prompt';
+import { SYSTEM_PROMPT } from './system-prompt.js';
 
 // Inlined so the serverless function has no dependency on project root (../config)
 const CHAT_MAX_MESSAGE_LENGTH = 1000;
