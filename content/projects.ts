@@ -1,5 +1,5 @@
 /**
- * Projects / case studies (hero 3: WhatsApp, GitHub-for-PMs, Blinkit first)
+ * Projects / case studies (lead proof first, then strongest PM case studies)
  * Used by Projects section
  * Last synced with resume: 2026-04-29
  */
@@ -8,32 +8,30 @@ import type { Project } from '../types';
 
 export const PROJECTS: Project[] = [
   {
+    title: 'ProductOS',
+    subtitle: 'Live Beta · MacOS Desktop App',
+    description:
+      'PM decision operating system: ask one messy product question and get a cited decision brief in ~10 minutes.',
+    tags: ['#Multi-agent', '#PM Tooling', '#0-to-1'],
+    metrics: ['Live Beta', 'Beta Users Active', '~10 min to Decision Brief'],
+    highlights: [
+      'Planner, parallel evidence workers, and synthesizer cover App Store, G2, Reddit, HN, and more',
+    ],
+    caseStudyAvailable: false,
+    segment: 'AI',
+    link: 'https://productos.dev',
+  },
+  {
     title: 'WhatsApp: Smart Muting',
     subtitle: 'Teardown + PRD',
     description:
       'Category-based muting (Marketing vs Utility) to cut notification fatigue and reduce Block Business rates while keeping OTPs.',
     tags: ['#PRD', '#Product Strategy', '#UX Research'],
     metrics: ['Target: −15% Block Rate'],
-    highlights: [
-      'Segmented business messages; granular muting UX preserving OTPs',
-    ],
+    highlights: ['Segmented business messages; granular muting UX preserving OTPs'],
     caseStudyAvailable: true,
     segment: 'Consumer',
     link: 'https://vijaybsehgal.notion.site/WhatsApp-India-Smart-Muting-for-Business-Messages-Teardown-PRD-4113bc4217a34bbb865c4aaa4b7d84c9',
-  },
-  {
-    title: 'ProductOS',
-    subtitle: 'Live Beta · MacOS Desktop App',
-    description:
-      'PM decision operating system. Ask one messy product question; get a cited decision brief in ~10 minutes. Multi-agent pipeline — planner classifies intent, parallel workers collect evidence across App Store, G2, Reddit, HN, and more, synthesizer builds the artifact. Live MacOS desktop app with active beta users.',
-    tags: ['#Multi-agent', '#PM Tooling', '#0-to-1'],
-    metrics: ['Live Beta', 'Beta Users Active', '~10 min to Decision Brief'],
-    highlights: [
-      'Full lifecycle: Question → Clarify → Plan → Collect → Findings → Report → Decision Artifact',
-    ],
-    caseStudyAvailable: false,
-    segment: 'AI',
-    link: 'https://productos.dev',
   },
   {
     title: 'GitHub-for-PMs Agent',
@@ -42,12 +40,22 @@ export const PROJECTS: Project[] = [
       'An AI agent that reads a PM case study and spits out a clean portfolio card. Built it because turning good work into visible work was taking too long.',
     tags: ['#AI Agent', '#Prototype', '#PromptChaining'],
     metrics: ['78% Activation', '~90% Time Reduction'],
-    highlights: [
-      '78% activation in 2 weeks vs 42% benchmark — PMs actually used it',
-    ],
+    highlights: ['78% activation in 2 weeks vs 42% benchmark — PMs actually used it'],
     caseStudyAvailable: true,
     segment: 'AI',
     link: 'https://www.notion.so/vijaybsehgal/AI-PM-Portfolio-Generator-GitHub-for-PMs-26bf8aca882d80d4bcb1d31495dd4372?source=copy_link',
+  },
+  {
+    title: 'Blinkit (QComm)',
+    subtitle: 'Product Teardown',
+    description:
+      'AI-assisted cart from purchase history to reduce reorder friction for power users.',
+    tags: ['#Growth Strategy', '#AI Feature', '#Quick-Commerce'],
+    metrics: ['+15% 7-day Reorder', '+5% Basket Size'],
+    highlights: ['Mapped purchase-to-reorder funnel; designed AI pre-fill smart cart'],
+    caseStudyAvailable: true,
+    segment: 'Quick Commerce',
+    link: 'https://www.notion.so/vijaybsehgal/Product-Sense-Blinkit-Smart-Cart-Reducing-Reorder-Time-by-95-4m-10s-25af8aca882d81bc8c91eb7856407f87?source=copy_link',
   },
   {
     title: 'Rasoi Planner',
@@ -80,20 +88,6 @@ export const PROJECTS: Project[] = [
     link: 'https://github.com/shadowdevcode/paisewise',
   },
   {
-    title: 'Blinkit (QComm)',
-    subtitle: 'Product Teardown',
-    description:
-      "AI-assisted cart from purchase history to cut cognitive load for power users. Projected +15% 7-day reorder, +5% basket size.",
-    tags: ['#Growth Strategy', '#AI Feature', '#Quick-Commerce'],
-    metrics: ['+15% 7-day Reorder', '+5% Basket Size'],
-    highlights: [
-      'Mapped purchase-to-reorder funnel; designed AI pre-fill smart cart',
-    ],
-    caseStudyAvailable: true,
-    segment: 'Quick Commerce',
-    link: 'https://www.notion.so/vijaybsehgal/Product-Sense-Blinkit-Smart-Cart-Reducing-Reorder-Time-by-95-4m-10s-25af8aca882d81bc8c91eb7856407f87?source=copy_link',
-  },
-  {
     title: 'Swish Quick-Commerce',
     subtitle: 'Retention Pilot',
     capstone: 'Airtribe Capstone · 9/10 · Industry PM Reviewed',
@@ -101,9 +95,7 @@ export const PROJECTS: Project[] = [
       'Post-order UX redesign with habit hooks and reorder nudges. Doubled 7-day reorder from 12%.',
     tags: ['#Retention', '#UX Research', '#Growth'],
     metrics: ['2× Reorder Rate', '+12pp Retention'],
-    highlights: [
-      'User interviews (n=15); habit-forming nudge system',
-    ],
+    highlights: ['User interviews (n=15); habit-forming nudge system'],
     caseStudyAvailable: true,
     segment: 'Quick Commerce',
     link: 'https://www.notion.so/vijaybsehgal/Swish-Retention-Post-Order-Experience-from-12-to-25-25af8aca882d80f78959d111f801f3f0?source=copy_link',
@@ -115,9 +107,7 @@ export const PROJECTS: Project[] = [
       'Hybrid AI + human accountability for habit formation. >40% W4 retention, 8% paid conversion.',
     tags: ['#GenAI', '#HealthTech', '#0-to-1'],
     metrics: ['>40% W4 Retention', '8% Paid Conv.'],
-    highlights: [
-      'AI chat onboarding — 3× completion vs forms',
-    ],
+    highlights: ['AI chat onboarding — 3× completion vs forms'],
     caseStudyAvailable: true,
     segment: 'HealthTech',
     link: 'https://vijaybsehgal.notion.site/The-Digital-Health-Coach-145c0cb389634f28bf18242bad389dc3',

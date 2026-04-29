@@ -10,14 +10,14 @@ A modern, recruiter-optimized portfolio built with **React 19 + Vite + Tailwind 
 
 ```bash
 # 1. Install dependencies
-npm install
+bun install
 
 # 2. Set up environment variables
 cp .env.example .env
 # Edit .env → add your GEMINI_API_KEY (get one at https://aistudio.google.com)
 
 # 3. Start the dev server (chatbot works locally via dev middleware)
-npm run dev
+bun run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
@@ -151,7 +151,7 @@ Place your resume at **`public/resume.pdf`**. The "Download Resume" button in He
 ## Architecture: How the AI Chat Works
 
 ```
-┌─ Development (npm run dev) ─────────────────────┐
+┌─ Development (bun run dev) ─────────────────────┐
 │                                                  │
 │  Browser → geminiService.ts → fetch('/api/chat') │
 │                    ↓                             │
@@ -198,9 +198,9 @@ For a custom domain:
 
 | Command           | Description                                             |
 | ----------------- | ------------------------------------------------------- |
-| `npm run dev`     | Start local dev server (port 5173) with chat middleware |
-| `npm run build`   | Production build to `dist/`                             |
-| `npm run preview` | Preview the production build locally                    |
+| `bun run dev`     | Start local dev server (port 5173) with chat middleware |
+| `bun run build`   | Production build to `dist/`                             |
+| `bun run preview` | Preview the production build locally                    |
 
 ---
 

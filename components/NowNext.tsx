@@ -19,7 +19,10 @@ const categoryConfig: Record<NowNextItem['category'], { icon: React.ReactNode; c
     color: 'bg-emerald-50 text-emerald-700 border-emerald-200',
   },
   Exploring: { icon: <Compass size={14} />, color: 'bg-amber-50 text-amber-700 border-amber-200' },
-  'At Work': { icon: <Briefcase size={14} />, color: 'bg-green-50 text-green-700 border-green-200' },
+  'At Work': {
+    icon: <Briefcase size={14} />,
+    color: 'bg-green-50 text-green-700 border-green-200',
+  },
   'Outside work': { icon: <Coffee size={14} />, color: 'bg-rose-50 text-rose-700 border-rose-200' },
 };
 
@@ -27,11 +30,14 @@ const NowNext: React.FC = () => {
   if (NOW_NEXT.length === 0) return null;
 
   // Group items by category
-  const groups = NOW_NEXT.reduce<Record<string, string[]>>((acc, item) => {
-    if (!acc[item.category]) acc[item.category] = [];
-    acc[item.category].push(item.text);
-    return acc;
-  }, {});
+  const groups = NOW_NEXT.reduce<Record<NowNextItem['category'], string[]>>(
+    (acc, item) => {
+      if (!acc[item.category]) acc[item.category] = [];
+      acc[item.category].push(item.text);
+      return acc;
+    },
+    {} as Record<NowNextItem['category'], string[]>
+  );
 
   return (
     <section className="py-12 scroll-mt-20">
@@ -44,7 +50,8 @@ const NowNext: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {Object.entries(groups).map(([category, items]) => {
+        {(Object.keys(groups) as NowNextItem['category'][]).map((category) => {
+          const items = groups[category];
           const config = categoryConfig[category] || categoryConfig.Learning;
           return (
             <div

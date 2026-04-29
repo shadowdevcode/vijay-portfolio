@@ -18,4 +18,15 @@ describe('App', () => {
     render(<App />);
     expect(screen.getByRole('button', { name: /open chat/i })).toBeInTheDocument();
   });
+
+  it('places projects before current-focus content', () => {
+    render(<App />);
+
+    const projectsHeading = screen.getByRole('heading', { name: /Case Studies/i });
+    const nowNextHeading = screen.getByRole('heading', { name: /Now & Next/i });
+
+    expect(
+      projectsHeading.compareDocumentPosition(nowNextHeading) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
 });

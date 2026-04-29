@@ -4,11 +4,36 @@ import userEvent from '@testing-library/user-event';
 import Projects from './Projects';
 
 describe('Projects', () => {
-  it('renders all projects when All filter is active', () => {
+  it('renders a proof-led default set when All filter is active', () => {
     render(<Projects />);
     expect(screen.getByRole('heading', { name: /Case Studies/i })).toBeInTheDocument();
     expect(screen.getByText(/GitHub-for-PMs Agent/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Swish Quick-Commerce/i)).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Show 4 more projects/i })).toBeInTheDocument();
+  });
+
+  it('expands the full project list from the default view', async () => {
+    const user = userEvent.setup();
+    render(<Projects />);
+
+    await user.click(screen.getByRole('button', { name: /Show 4 more projects/i }));
+
     expect(screen.getByText(/Swish Quick-Commerce/i)).toBeInTheDocument();
+  });
+
+  it('prioritizes the intended proof-led project order', () => {
+    render(<Projects />);
+
+    const headings = screen
+      .getAllByRole('heading', { level: 3 })
+      .map((heading) => heading.textContent);
+
+    expect(headings.slice(0, 4)).toEqual([
+      'ProductOS',
+      'WhatsApp: Smart Muting',
+      'GitHub-for-PMs Agent',
+      'Blinkit (QComm)',
+    ]);
   });
 
   it('filters projects by segment when chip is clicked', async () => {
@@ -19,7 +44,7 @@ describe('Projects', () => {
     await user.click(quickCommerceChip);
 
     expect(screen.getByText(/Swish Quick-Commerce/i)).toBeInTheDocument();
-    expect(screen.getByText(/Blinkit Growth Teardown/i)).toBeInTheDocument();
+    expect(screen.getByText(/Blinkit \(QComm\)/i)).toBeInTheDocument();
     expect(screen.queryByText(/GitHub-for-PMs Agent/i)).not.toBeInTheDocument();
   });
 

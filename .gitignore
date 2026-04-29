@@ -29,3 +29,7 @@ dist-ssr
 # Claude Code worktrees
 .claude
 .vercel
+
+# Playwright artifacts
+playwright-report/
+test-results/

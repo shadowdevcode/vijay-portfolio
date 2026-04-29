@@ -40,7 +40,7 @@ All portfolio data is in **one file**: `constants.tsx`. Update the appropriate a
 
 - [ ] Add a new entry to `PROJECTS` with full metadata
 - [ ] Add any measurable impact to `IMPACT_METRICS`
-- [ ] Update the system prompt in `api/chat.ts` with new context
+- [ ] Update the system prompt in `api/system-prompt.ts` with new context
 
 ---
 
@@ -61,11 +61,11 @@ When adding a new case study, ensure it has:
 
 ```bash
 # Build the project
-npm run build
+bun run build
 
 # Check no API key leaked into the bundle
 grep -r "AIzaSy" dist/ && echo "FAIL" || echo "PASS"
 
 # Preview locally
-npm run preview
+bun run preview
 ```

@@ -10,7 +10,9 @@ test.describe('Portfolio — cross-device (mobile, tablet, desktop)', () => {
 
   test('shows lead builder proof in first view', async ({ page }) => {
     await page.goto('/');
-    await expect(page.getByText(/3 products in 7 days|AI Product OS|no engineering team/i).first()).toBeVisible();
+    await expect(
+      page.getByText(/3 products in 7 days|AI Product OS|no engineering team/i).first()
+    ).toBeVisible();
   });
 
   test('primary CTA "Book a 20-min call" is visible and clickable', async ({ page }) => {
@@ -53,7 +55,9 @@ test.describe('Portfolio — cross-device (mobile, tablet, desktop)', () => {
     await page.goto('/');
     await page.getByText(/Let's Build Something Together/i).scrollIntoViewIfNeeded();
     await expect(page.getByRole('link', { name: /Book a 20-min Call/i })).toBeVisible();
-    await expect(page.getByRole('link', { name: /Download Resume|View Resume/i }).first()).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: /Download Resume|View Resume/i }).first()
+    ).toBeVisible();
   });
 
   test('no horizontal overflow on mobile viewport', async ({ page }) => {
@@ -66,6 +70,8 @@ test.describe('Portfolio — cross-device (mobile, tablet, desktop)', () => {
   test('main content is within viewport on iPad size', async ({ page }) => {
     await page.setViewportSize({ width: 768, height: 1024 });
     await page.goto('/');
+    await page.waitForLoadState('domcontentloaded');
+    await page.evaluate(() => window.scrollTo(0, 0));
     await expect(page.getByRole('heading', { name: /Vijay Sehgal/i })).toBeInViewport();
   });
 
@@ -77,6 +83,7 @@ test.describe('Portfolio — cross-device (mobile, tablet, desktop)', () => {
 
   test('PaiseWise card is present', async ({ page }) => {
     await page.goto('/');
+    await page.getByRole('button', { name: /Show \d+ more projects/i }).click();
     await expect(page.getByText(/PaiseWise/i).first()).toBeVisible();
   });
 

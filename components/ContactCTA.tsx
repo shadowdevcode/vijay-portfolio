@@ -20,7 +20,8 @@ const ContactCTA: React.FC = () => {
           Let&apos;s Build Something Together
         </h2>
         <p className="text-zinc-400 text-sm md:text-base max-w-lg mx-auto mb-8">
-          I&apos;m focused on PM roles at the frontier of agentic AI — products that operate at scale and get smarter over time. If you&apos;re building in that space, I&apos;d like to talk.
+          I&apos;m focused on PM roles where product judgment, AI-native workflows, and fast
+          execution matter. If that matches what you&apos;re building, I&apos;d like to talk.
         </p>
 
         {/* Primary CTAs */}
@@ -36,41 +37,38 @@ const ContactCTA: React.FC = () => {
             Book a 20-min Call
           </a>
 
-          {/* Email */}
-          <a
-            href={`mailto:${PERSONAL_INFO.email}`}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-zinc-900 rounded-lg text-sm font-semibold hover:bg-zinc-100 transition-colors"
-          >
-            <Mail size={16} />
-            {PERSONAL_INFO.email}
-          </a>
-        </div>
-
-        {/* Secondary CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          {linkedIn && (
-            <a
-              href={linkedIn.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 text-white rounded-lg text-sm font-semibold hover:bg-zinc-700 transition-colors border border-zinc-700"
-            >
-              <Linkedin size={16} />
-              Connect on LinkedIn
-              <ArrowRight size={14} />
-            </a>
-          )}
-
           {resumeLink && (
             <a
               href={resumeLink.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 text-white rounded-lg text-sm font-semibold hover:bg-zinc-700 transition-colors border border-zinc-700"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-zinc-900 rounded-lg text-sm font-semibold hover:bg-zinc-100 transition-colors"
             >
               <resumeLink.icon size={16} />
               View Resume
               <ArrowRight size={14} />
+            </a>
+          )}
+        </div>
+
+        {/* Secondary contact paths */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-zinc-400">
+          <a
+            href={`mailto:${PERSONAL_INFO.email}`}
+            className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+          >
+            <Mail size={14} />
+            {PERSONAL_INFO.email}
+          </a>
+          {linkedIn && (
+            <a
+              href={linkedIn.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+            >
+              <Linkedin size={14} />
+              LinkedIn
             </a>
           )}
         </div>

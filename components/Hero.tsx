@@ -16,10 +16,9 @@ import { MapPin, Calendar, Briefcase, Clock } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const resumeLink = SOCIAL_LINKS.find((l) => l.name === 'Resume');
-  const leadProof = 'leadBuilderProof' in PERSONAL_INFO ? (PERSONAL_INFO as { leadBuilderProof?: string }).leadBuilderProof : undefined;
 
   return (
-    <section id="home" className="pt-8 pb-4 md:pt-24 md:pb-8 scroll-mt-20">
+    <section id="home" className="pt-8 pb-4 md:pt-16 md:pb-8 scroll-mt-20">
       <div className="flex flex-col-reverse md:flex-row md:items-start md:justify-between gap-8">
         {/* Text content */}
         <div className="flex-1">
@@ -38,25 +37,22 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Status badge + role targets inline */}
-          {PERSONAL_INFO.status && (
-            <div className="flex flex-wrap items-center gap-2 mb-5">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-                <span className="text-sm font-medium text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full">
-                  {PERSONAL_INFO.status}
-                </span>
-              </div>
-              {/* Role target pills */}
-              {HIRE_INFO.roles.map((role) => (
-                <span
-                  key={role}
-                  className="text-[11px] font-semibold text-zinc-500 bg-zinc-100 px-2.5 py-1 rounded-full"
-                >
-                  {role}
-                </span>
-              ))}
+          <div className="flex flex-wrap items-center gap-2 mb-5">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+              <span className="text-sm font-medium text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full">
+                Open to PM conversations
+              </span>
             </div>
-          )}
+            {HIRE_INFO.roles.map((role) => (
+              <span
+                key={role}
+                className="text-[11px] font-semibold text-zinc-500 bg-zinc-100 px-2.5 py-1 rounded-full"
+              >
+                {role}
+              </span>
+            ))}
+          </div>
 
           {/* Summary */}
           <p
@@ -67,11 +63,9 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Lead builder proof — first 10 seconds */}
-          {leadProof && (
-            <p className="text-sm font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2 mb-5 max-w-xl">
-              {leadProof}
-            </p>
-          )}
+          <p className="text-sm font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2 mb-5 max-w-xl">
+            {PERSONAL_INFO.leadBuilderProof}
+          </p>
 
           {/* Availability + location strip */}
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-5 text-sm text-zinc-500">
@@ -108,18 +102,6 @@ const Hero: React.FC = () => {
                 <resumeLink.icon size={16} /> View Resume
               </a>
             )}
-            {SOCIAL_LINKS.filter((l) => l.name !== 'Resume').map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target={link.name === 'Email' ? '_self' : '_blank'}
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg border border-zinc-200 text-zinc-500 hover:text-zinc-900 hover:border-zinc-400 transition-all"
-                aria-label={link.name}
-              >
-                <link.icon size={18} />
-              </a>
-            ))}
           </div>
         </div>
 

@@ -19,6 +19,18 @@
  */
 import { LucideIcon } from 'lucide-react';
 
+// ---- Personal Info ----
+export interface PersonalInfo {
+  name: string;
+  title: string;
+  location: string;
+  email: string;
+  phone: string;
+  summary: string;
+  leadBuilderProof: string;
+  avatar: string;
+}
+
 // ---- Social / Contact ----
 export interface SocialLink {
   name: string;

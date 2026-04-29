@@ -66,6 +66,7 @@ const ChatWidget: React.FC = () => {
   // Focus trap: keep Tab/Shift+Tab within dialog
   useEffect(() => {
     if (!isOpen || !dialogRef.current) return;
+    const dialog = dialogRef.current;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -74,9 +75,7 @@ const ChatWidget: React.FC = () => {
       }
       if (e.key !== 'Tab') return;
 
-      const focusables = Array.from(
-        dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)
-      );
+      const focusables = Array.from(dialog.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR));
       const visibleFocusables = focusables.filter((el) => el.offsetParent !== null);
       if (visibleFocusables.length === 0) return;
 

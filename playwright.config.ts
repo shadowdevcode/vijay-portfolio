@@ -2,8 +2,8 @@ import { defineConfig, devices } from '@playwright/test';
 
 /**
  * Cross-device e2e tests: mobile, tablet (iPad), desktop.
- * Run: npx playwright test
- * Run with UI: npx playwright test --ui
+ * Run: bun run test:e2e
+ * Run with UI: bun run test:e2e:ui
  */
 export default defineConfig({
   testDir: './e2e',
@@ -24,7 +24,7 @@ export default defineConfig({
     { name: 'ipad', use: { ...devices['iPad (gen 7)'] } },
   ],
   webServer: {
-    command: 'npm run dev',
+    command: 'bun run dev',
     url: 'http://localhost:5173',
     reuseExistingServer: true,
     timeout: 60_000,

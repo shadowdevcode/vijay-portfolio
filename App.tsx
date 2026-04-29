@@ -99,10 +99,10 @@ const App: React.FC = () => {
           {/* ---- Above the fold ---- */}
           <Hero />
           <ProofOfImpact />
-          <NowNext />
 
           {/* ---- Proof of work (projects first = "show, don't tell") ---- */}
           <Projects />
+          <NowNext />
 
           {/* ---- Traditional credentials ---- */}
           <Experience />

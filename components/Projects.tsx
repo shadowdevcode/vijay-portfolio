@@ -21,6 +21,7 @@ const PROJECT_ACCENTS = [
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   // Derive unique segments from data
   const segments = [
@@ -30,6 +31,9 @@ const Projects: React.FC = () => {
 
   const filtered =
     activeFilter === 'All' ? PROJECTS : PROJECTS.filter((p) => p.segment === activeFilter);
+  const visibleProjects =
+    activeFilter === 'All' && !showAllProjects ? filtered.slice(0, 4) : filtered;
+  const hasHiddenProjects = activeFilter === 'All' && visibleProjects.length < filtered.length;
 
   return (
     <section id="projects" className="py-12 scroll-mt-20">
@@ -48,7 +52,10 @@ const Projects: React.FC = () => {
             return (
               <button
                 key={seg}
-                onClick={() => setActiveFilter(seg)}
+                onClick={() => {
+                  setActiveFilter(seg);
+                  setShowAllProjects(seg !== 'All');
+                }}
                 className={`
                   px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200
                   ${
@@ -71,7 +78,7 @@ const Projects: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {filtered.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <a
             key={index}
             href={project.link || '#'}
@@ -155,7 +162,8 @@ const Projects: React.FC = () => {
 
               {project.link && project.link !== '#' && (
                 <div className="ml-auto flex items-center gap-1 text-xs font-medium text-zinc-400 group-hover:text-blue-600 transition-colors">
-                  {project.caseStudyAvailable ? 'Read Case Study' : 'View Project'} <ArrowUpRight size={12} />
+                  {project.caseStudyAvailable ? 'Read Case Study' : 'View Project'}{' '}
+                  <ArrowUpRight size={12} />
                 </div>
               )}
               {(!project.link || project.link === '#') && project.caseStudyAvailable && (
@@ -167,6 +175,18 @@ const Projects: React.FC = () => {
           </a>
         ))}
       </div>
+
+      {hasHiddenProjects && (
+        <div className="mt-5 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowAllProjects(true)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-zinc-200 bg-white text-sm font-semibold text-zinc-700 hover:border-zinc-400 hover:text-zinc-900 transition-colors"
+          >
+            Show {filtered.length - visibleProjects.length} more projects
+          </button>
+        </div>
+      )}
     </section>
   );
 };
